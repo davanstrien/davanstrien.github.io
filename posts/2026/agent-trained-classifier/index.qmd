@@ -3,7 +3,7 @@ title: "A model release became a training recipe the same day. I mostly watched.
 subtitle: "LiquidAI shipped new encoder models this morning. By the evening there was a fine-tuning recipe, a tutorial dataset, and a working classifier — built by an agent on HF Jobs for under $5 in GPU time."
 date: "2026-07-28"
 author: "Daniel van Strien"
-categories: [huggingface, jobs, agents, fine-tuning, classification]
+categories: [agents, fine-tuning, hf-jobs, huggingface]
 description: "I pasted two links into Claude Code and asked for a training recipe with early smoke tests on HF Jobs. What came back — and why agent-legible infrastructure is what made it work."
 image: confidence-bands.png
 draft: false

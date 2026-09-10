@@ -1,6 +1,6 @@
 ---
 description: _This post is part of a series on synthetic data generation techniques. You may also want to check out [Awesome Synthetic (text) datasets](https://github.com/davanstrien/awesome-synthetic-datasets), where I will be collecting these posts._
-categories: [data, synthetic-data]
+categories: [datasets, synthetic-data]
 title: "Synthetic dataset generation techniques\\: generating custom sentence similarity data"
 date: "2024-05-23"
 ---

@@ -3,7 +3,7 @@ title: "Distilling Qwen3.8 with datatrove on Hugging Face Jobs"
 subtitle: "35,000 card summaries for $16, no local GPU. Part 1: the data."
 date: "2026-08-17"
 author: "Daniel van Strien"
-categories: [synthetic-data, hf-jobs, datatrove, datasets]
+categories: [synthetic-data, hf-jobs, datasets, huggingface]
 description: "datatrove's new Jobs backend plus a days-old 27B teacher: regenerating a 35,837-summary training dataset in one afternoon for $15.58, with a calibration-first workflow and length-controllable outputs."
 format:
   html:
