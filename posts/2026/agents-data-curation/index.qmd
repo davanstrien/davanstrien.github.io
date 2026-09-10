@@ -1,5 +1,5 @@
 ---
-title: "Using agents to build efficient classifiers for data curation"
+title: "Building data curation classifiers with agents, SetFit and Jobs"
 description: "Building a small document classifier with an agent, then using Hugging Face Jobs to label 1% of the English FinePDFs-Edu dataset."
 author: "Daniel van Strien"
 date: "2026-09-10"
