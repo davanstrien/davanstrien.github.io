@@ -200,8 +200,8 @@ Figure&nbsp;3: The Jobs bar is based on measured runtime; the two API bars are b
 </section></div> ]]></description>
   <category>agents</category>
   <category>datasets</category>
-  <category>classification</category>
   <category>hf-jobs</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/agents-data-curation/</guid>
   <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/agents-data-curation/card-index.jpg" medium="image" type="image/jpeg"/>
@@ -846,8 +846,8 @@ font-style: inherit;">done</span></span></code></pre></div></div>
  ]]></description>
   <category>synthetic-data</category>
   <category>hf-jobs</category>
-  <category>datatrove</category>
   <category>datasets</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/distilling-qwen38-datatrove-jobs/</guid>
   <pubDate>Mon, 17 Aug 2026 00:00:00 GMT</pubDate>
 </item>
@@ -943,11 +943,10 @@ Hugging Face Jobs.
 </section>
 
  ]]></description>
-  <category>huggingface</category>
-  <category>jobs</category>
   <category>agents</category>
   <category>fine-tuning</category>
-  <category>classification</category>
+  <category>hf-jobs</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/agent-trained-classifier/</guid>
   <pubDate>Tue, 28 Jul 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/agent-trained-classifier/confidence-bands.png" medium="image" type="image/png" height="42" width="144"/>
@@ -1126,9 +1125,8 @@ The same ten models, ranked by the headline <code>old_scans</code> score (left) 
  ]]></description>
   <category>ocr</category>
   <category>glam</category>
-  <category>huggingface</category>
-  <category>jobs</category>
   <category>evaluation</category>
+  <category>hf-jobs</category>
   <guid>https://danielvanstrien.xyz/posts/2026/ocr-old-scans/</guid>
   <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/ocr-old-scans/cjk-hallucination.png" medium="image" type="image/png" height="100" width="144"/>
@@ -1510,12 +1508,9 @@ font-style: inherit;">}</span></span></code></pre></div></div>
   <category>ocr</category>
   <category>glam</category>
   <category>structured-extraction</category>
-  <category>vlm</category>
-  <category>nuextract</category>
-  <category>index-cards</category>
+  <category>computer-vision</category>
   <category>fine-tuning</category>
-  <category>huggingface</category>
-  <category>jobs</category>
+  <category>hf-jobs</category>
   <guid>https://danielvanstrien.xyz/posts/2026/nuextract-index-cards/</guid>
   <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/nuextract-index-cards/card-to-json.png" medium="image" type="image/png" height="213" width="144"/>
@@ -1685,11 +1680,10 @@ font-style: inherit;"># mutable, S3-like storage on the Hub</span></span></code>
 </section>
 
  ]]></description>
-  <category>huggingface</category>
   <category>data-engineering</category>
   <category>polars</category>
-  <category>duckdb</category>
-  <category>jobs</category>
+  <category>hf-jobs</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/buckets-data-backend/</guid>
   <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/buckets-data-backend/pipeline.png" medium="image" type="image/png" height="80" width="144"/>
@@ -2089,9 +2083,9 @@ font-style: inherit;">}</span></span></code></pre></div></div>
  ]]></description>
   <category>ocr</category>
   <category>glam</category>
-  <category>huggingface</category>
   <category>structured-extraction</category>
   <category>datasets</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/structured-records-from-cards/</guid>
   <pubDate>Thu, 21 May 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/structured-records-from-cards/nls-card-to-json.png" medium="image" type="image/png" height="180" width="144"/>
@@ -2459,11 +2453,10 @@ font-style: inherit;">}</span></span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>coding-agents</category>
-  <category>huggingface</category>
-  <category>agent-traces</category>
+  <category>agents</category>
   <category>glam</category>
   <category>datasets</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/agent-race-traces/</guid>
   <pubDate>Wed, 06 May 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/agent-race-traces/judgment-matrix.png" medium="image" type="image/png" height="58" width="144"/>
@@ -2649,10 +2642,10 @@ Note
 </section>
 
  ]]></description>
-  <category>coding-agents</category>
-  <category>hugging-face</category>
+  <category>agents</category>
   <category>glam</category>
   <category>datasets</category>
+  <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/agent-race/</guid>
   <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
   <media:content url="https://danielvanstrien.xyz/posts/2026/agent-race/thumbnail.png" medium="image" type="image/png" height="130" width="144"/>
@@ -3236,10 +3229,8 @@ Domain rules:
 </section>
 
  ]]></description>
-  <category>ai</category>
-  <category>coding-agents</category>
-  <category>agent-traces</category>
-  <category>open-data</category>
+  <category>agents</category>
+  <category>datasets</category>
   <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/agent-sentiment/</guid>
   <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
@@ -3570,7 +3561,6 @@ font-style: inherit;">"your-username/your-collection"</span>)</span></code></pre
   <category>ocr</category>
   <category>glam</category>
   <category>huggingface</category>
-  <category>uv-scripts</category>
   <guid>https://danielvanstrien.xyz/posts/2026/re-ocr-collections/</guid>
   <pubDate>Thu, 19 Feb 2026 00:00:00 GMT</pubDate>
 </item>
@@ -4286,9 +4276,9 @@ font-style: inherit;">=</span>fragment_scan_options)</span></code></pre></div></
 
  ]]></description>
   <category>huggingface</category>
-  <category>unsloth</category>
-  <category>streaming-datasets</category>
+  <category>datasets</category>
   <category>fineweb</category>
+  <category>fine-tuning</category>
   <guid>https://danielvanstrien.xyz/posts/2026/hf-streaming-unsloth/train-massive-datasets-without-downloading.html</guid>
   <pubDate>Wed, 07 Jan 2026 00:00:00 GMT</pubDate>
   <media:content url="https://raw.githubusercontent.com/huggingface/blog/refs/heads/main/assets/hf_unsloth/thumbnail.png" medium="image" type="image/png"/>
@@ -5880,11 +5870,10 @@ font-style: inherit;">"WANDB_API_KEY"</span>),</span>
 </ol>
 </section></div> ]]></description>
   <category>huggingface</category>
-  <category>uv-scripts</category>
-  <category>vlm</category>
-  <category>hf Jobs</category>
+  <category>hf-jobs</category>
+  <category>computer-vision</category>
   <category>art-history</category>
-  <category>iconclass</category>
+  <category>fine-tuning</category>
   <guid>https://danielvanstrien.xyz/posts/2025/iconclass-vlm-sft/trl-vlm-fine-tuning-iconclass.html</guid>
   <pubDate>Thu, 04 Sep 2025 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/davanstrien/blog/blob/main/posts/2025/iconclass-vlm-sft/assets/iconclass-post-visual.png?raw=true" medium="image"/>
@@ -7539,9 +7528,8 @@ font-style: inherit;"># Print the last 10 lines of logs</span></span></code></pr
 
  ]]></description>
   <category>huggingface</category>
-  <category>uv-scripts</category>
   <category>vllm</category>
-  <category>hf Jobs</category>
+  <category>hf-jobs</category>
   <guid>https://danielvanstrien.xyz/posts/2025/hf-jobs/vllm-batch-inference.html</guid>
   <pubDate>Wed, 30 Jul 2025 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/davanstrien/blog/blob/a2ff89fbd48d22e0f4a984b03a81a92c07080eea/posts/2025/hf-jobs/assets/is-this-uv-script.jpg?raw=true" medium="image"/>
@@ -7616,11 +7604,9 @@ font-style: inherit;"># Print the last 10 lines of logs</span></span></code></pr
 <li id="fn2"><p>Markdown is a sensible target format; it maintains structural information about collections while being directly usable in ML workflows, easily understood by non-developers, and compatible with existing tools. This allows us to move beyond requiring ALTO/METS XML as the only format for library OCR data while preserving essential metadata.↩︎</p></li>
 </ol>
 </section></div> ]]></description>
-  <category>AI</category>
   <category>libraries</category>
   <category>datasets</category>
-  <category>GLAM</category>
-  <category>community</category>
+  <category>glam</category>
   <guid>https://danielvanstrien.xyz/posts/2025/who-benefits-rethinking-library-data-ai/libraries-as-training-data.html</guid>
   <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/davanstrien/blog/blob/7f7b15b8a85a9967f18b994b7c80f1cbbcfedbb0/posts/2025/who-benefits-rethinking-library-data-ai/assets/finebooks-illusration.png?raw=true" medium="image"/>
@@ -9100,9 +9086,7 @@ font-style: inherit;">0.95</span>)</span>
  ]]></description>
   <category>huggingface</category>
   <category>datasets</category>
-  <category>arxiv</category>
   <category>vllm</category>
-  <category>modernbert</category>
   <guid>https://danielvanstrien.xyz/posts/2025/vllm/modern_inference_modernbert.html</guid>
   <pubDate>Thu, 24 Apr 2025 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/davanstrien/blog/raw/refs/heads/main/posts/2025/vllm/vllm-modernbert.png" medium="image" type="image/png"/>
@@ -9584,8 +9568,7 @@ font-style: inherit;">'s look at the criteria:</span></span></code></pre></div><
   <category>huggingface</category>
   <category>datasets</category>
   <category>synthetic-data</category>
-  <category>qwq</category>
-  <category>reasoning</category>
+  <category>structured-extraction</category>
   <guid>https://danielvanstrien.xyz/posts/2025/reasoning-models/generating-structured-data-extraction-dataset-with-qwq-and-curator.html</guid>
   <pubDate>Tue, 11 Mar 2025 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/davanstrien/blog/raw/refs/heads/main/posts/2025/reasoning-models/curator.webp" medium="image" type="image/webp"/>
@@ -10559,8 +10542,8 @@ font-style: inherit;">'Distribution of Different Reward Types'</span></span>
 
  ]]></description>
   <category>huggingface</category>
-  <category>trl</category>
   <category>datasets</category>
+  <category>fine-tuning</category>
   <guid>https://danielvanstrien.xyz/posts/2025/grpo/trl_log_completions_to_hf_datasets.html</guid>
   <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
   <media:content url="https://raw.githubusercontent.com/davanstrien/blog/refs/heads/main/posts/2025/grpo/assets/whale.png" medium="image" type="image/png"/>
@@ -13078,9 +13061,8 @@ font-style: inherit;">10.0</span>}</span></code></pre></div></div>
  ]]></description>
   <category>huggingface</category>
   <category>datasets</category>
-  <category>arxiv</category>
   <category>synthetic-data</category>
-  <category>deepseek</category>
+  <category>fine-tuning</category>
   <guid>https://danielvanstrien.xyz/posts/2025/deepseek/distil-deepseek-modernbert.html</guid>
   <pubDate>Wed, 29 Jan 2025 00:00:00 GMT</pubDate>
   <media:content url="https://github.com/davanstrien/blog/raw/refs/heads/main/posts/2025/modern-bert-sythetic-labels/bert-illustration.webp" medium="image" type="image/webp"/>
@@ -13243,7 +13225,7 @@ font-style: inherit;">"language_code"</span>).unique().collect().to_series().to_
 <h2 class="anchored" data-anchor-id="can-we-train-a-model-to-work-with-a-subset-of-languages">Can we train a model to work with a subset of languages?</h2>
 <p>So far we have 18 languages in the dataset. Currently over a 100 languages have some level of annotation so eventually we hope the community will create a dataset for ma ne model per language.</p>
 <p>Claude gave me the following visual for languages groups in this dataset (which isn’t super accurate but gives a rough idea of the language families represented in the dataset).</p>
-<div id="fig-languages" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Language families represented in the FineWeb-C dataset" alt="Color-coded grid visualization of 20 languages organized by 8 language families (Indo-European, Sino-Tibetan, Austronesian, Uralic, Turkic, Austro-Asiatic, Afroasiatic, Indo-Aryan) and their subgroups, with language codes shown in monospace font">
+<div id="fig-languages" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Color-coded grid visualization of 20 languages organized by 8 language families (Indo-European, Sino-Tibetan, Austronesian, Uralic, Turkic, Austro-Asiatic, Afroasiatic, Indo-Aryan) and their subgroups, with language codes shown in monospace font" data-fig-cap="Language families represented in the FineWeb-C dataset">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-languages-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="https://danielvanstrien.xyz/posts/2025/FineWeb-c/assets/language-families-names.svg" class="img-fluid figure-img" data-fig-cap="Language families represented in the FineWeb-C dataset" alt="Color-coded grid visualization of 20 languages organized by 8 language families (Indo-European, Sino-Tibetan, Austronesian, Uralic, Turkic, Austro-Asiatic, Afroasiatic, Indo-Aryan) and their subgroups, with language codes shown in monospace font">
