@@ -1,0 +1,22 @@
+{
+  "eligible_documents": 191724,
+  "sampled_source_rows": 230234,
+  "measured_job_running_usd": 0.6990986111111112,
+  "training_model_selection_gpu_usd": 2.8955,
+  "api_batch_estimates_usd": {
+    "gemini-2.5-flash-lite": 12.845508,
+    "gpt-5.6-luna": 26.074464
+  },
+  "input_tokens_per_document": 1300,
+  "output_tokens_per_document": 10,
+  "price_date": "2026-09-10",
+  "sources": {
+    "gemini": "https://ai.google.dev/gemini-api/docs/pricing",
+    "openai": "https://developers.openai.com/api/docs/pricing"
+  },
+  "limits": [
+    "LLM API estimates, not measured runs or a quality comparison",
+    "Thinking disabled; no caching or retries",
+    "Training/model-selection, agent and storage costs separate"
+  ]
+}
