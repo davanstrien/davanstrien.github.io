@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="740" height="730" viewBox="0 0 740 730" role="img" aria-labelledby="title desc">
+  <title id="title">Develop with an agent, evaluate, then classify at scale</title>
+  <desc id="desc">Work with an agent to review labels and examples, refining the guide. Train pilot classifiers on Hugging Face Jobs; pilot errors feed back into training data and settings. After fixing the settings, evaluate against 120 held-out agent-labelled documents. Run the classifier on Jobs to produce 191,724 predictions in 42 minutes for about 70 cents. Use the predictions to explore sampling mixtures and test downstream usefulness.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#74818c"/></marker>
+    <marker id="review-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#987138"/></marker>
+  </defs>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; }
+    .tag { font-size: 16px; font-weight: 650; letter-spacing: 1.3px; fill: #526171; }
+    .title { font-size: 24px; font-weight: 600; fill: #213344; }
+    .detail { font-size: 20px; fill: #425565; }
+    .line { fill: none; stroke: #74818c; stroke-width: 2; marker-end: url(#arrow); }
+    .review { fill: none; stroke: #987138; stroke-width: 2; marker-end: url(#review-arrow); }
+  </style>
+  <rect width="740" height="730" fill="white"/>
+
+  <rect x="90" y="18" width="570" height="110" rx="8" fill="#f8f3e9" stroke="#daceb8"/>
+  <text x="115" y="47" class="tag">YOU + AGENT</text>
+  <text x="115" y="77" class="title">Agree labels and review examples</text>
+  <text x="115" y="107" class="detail">200 agent-labelled training documents</text>
+  <path d="M90 103 H66 Q56 103 56 93 V58 Q56 48 68 48 H84" class="review"/>
+  <text x="34" y="139" transform="rotate(-90 34 139)" font-size="16" fill="#7e5b27">Refine the guide</text>
+  <path d="M375 129 V156" class="line"/>
+
+  <rect x="90" y="168" width="570" height="110" rx="8" fill="#f8f3e9" stroke="#daceb8"/>
+  <text x="115" y="197" class="tag">TRAIN ON HUGGING FACE JOBS</text>
+  <text x="115" y="227" class="title">Train and inspect pilot results</text>
+  <text x="115" y="257" class="detail">Compare settings and training data</text>
+  <path d="M660 232 H680 Q690 232 690 220 V89 Q690 77 678 77 H666" class="review"/>
+  <text x="719" y="62" transform="rotate(90 719 62)" font-size="16" fill="#7e5b27">Refine data and settings</text>
+  <path d="M375 279 V306" class="line"/>
+
+  <rect x="90" y="318" width="570" height="100" rx="8" fill="#f4f5f6" stroke="#cfd5d9"/>
+  <text x="115" y="344" class="tag">FIX SETTINGS, THEN CHECK</text>
+  <text x="115" y="373" class="title">Evaluate on held-out documents</text>
+  <text x="115" y="401" class="detail">120 agent-labelled reference documents</text>
+  <path d="M375 419 V446" class="line"/>
+
+  <rect x="90" y="458" width="570" height="110" rx="8" fill="#edf4f6" stroke="#c0d5dd"/>
+  <text x="115" y="487" class="tag">RUN ON HUGGING FACE JOBS</text>
+  <text x="115" y="517" class="title">Classify the larger sample</text>
+  <text x="115" y="547" class="detail">191,724 predictions · 42 minutes · ~$0.70</text>
+  <path d="M375 569 V596" class="line"/>
+
+  <rect x="90" y="608" width="570" height="100" rx="8" fill="#edf4f6" stroke="#c0d5dd"/>
+  <text x="115" y="634" class="tag">USE PREDICTIONS TO EXPLORE</text>
+  <text x="115" y="663" class="title">Choose a mixture of document types</text>
+  <text x="115" y="691" class="detail">Inspect candidates and test downstream</text>
+</svg>
