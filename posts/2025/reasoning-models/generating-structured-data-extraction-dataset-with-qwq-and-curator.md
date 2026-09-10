@@ -3,7 +3,7 @@ title: "Using QwQ to generate a reasoning dataset for structured data extraction
 description: "Learn how to use QwQ-32B to generate synthetic reasoning datasets for training smaller models on structured data extraction tasks"
 author: "Daniel van Strien"
 date: "2025-03-11"
-categories: ["huggingface", "datasets", "synthetic-data", "qwq", "reasoning"]
+categories: [huggingface, datasets, synthetic-data, structured-extraction]
 image: "https://github.com/davanstrien/blog/raw/refs/heads/main/posts/2025/reasoning-models/curator.webp"
 twitter-card:
   title: "Using QwQ to generate a reasoning dataset for structured data extraction"

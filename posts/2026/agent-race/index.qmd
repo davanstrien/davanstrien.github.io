@@ -3,7 +3,7 @@ title: "Two agents, one prompt"
 subtitle: "Pi + Kimi K2.6 and Claude Code both fine-tuned a Jim Crow law classifier from a single sentence. The interesting gap wasn't F1."
 date: "2026-05-01"
 author: "Daniel van Strien"
-categories: [coding-agents, hugging-face, glam, datasets]
+categories: [agents, glam, datasets, huggingface]
 description: "I gave two coding agents the same one-line prompt and watched what each decided to do. Both shipped working classifiers via hf jobs. The headline metrics were within 1.5pp — the interesting differences were everywhere else."
 image: thumbnail.png
 format:

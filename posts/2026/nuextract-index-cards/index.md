@@ -4,18 +4,7 @@ subtitle: "Fine-tuning one open 4B model to read several archival card collectio
 description: "Can a small, open model, fine-tuned cheaply, match a bigger one on a real extraction task and stay general? A test on archival index cards across several collections, for about $45."
 date: "2026-06-24"
 author: "Daniel van Strien"
-categories:
-  [
-    ocr,
-    glam,
-    structured-extraction,
-    vlm,
-    nuextract,
-    index-cards,
-    fine-tuning,
-    huggingface,
-    jobs,
-  ]
+categories: [ocr, glam, structured-extraction, computer-vision, fine-tuning, hf-jobs]
 image: card-to-json.png
 draft: false
 execute:

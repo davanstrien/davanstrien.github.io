@@ -3,7 +3,7 @@ title: "Benchmarking OCR fairly is harder than it looks"
 subtitle: "Ten OCR models on olmOCR-bench's hardest scans — and why a model that reads the page more faithfully can score lower."
 date: "2026-07-07"
 author: "Daniel van Strien"
-categories: [ocr, glam, huggingface, jobs, evaluation]
+categories: [ocr, glam, evaluation, hf-jobs]
 description: "I ran ten current OCR models on olmOCR-bench's 'old scans' subset. The ranking flips depending on one thing: whether you want a model that keeps what's on the page, or one that cleans it up. A note on what the headline score actually rewards — and how agents + Jobs made it cheap to run."
 image: cjk-hallucination.png
 draft: false

@@ -1,6 +1,6 @@
 ---
 description: "How can we train useful machine learning models without writing code?"
-categories: [autotrain]
+categories: [huggingface, fine-tuning]
 title: "Using Hugging Face AutoTrain to train an image classifier without writing any code."
 date: "2023-02-22"
 image: autotrain-image.webp

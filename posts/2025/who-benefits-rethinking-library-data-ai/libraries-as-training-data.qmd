@@ -2,7 +2,7 @@
 title: "Who Benefits? Rethinking Library Data in the Age of AI"
 author: "Daniel van Strien"
 date: "2025-06-09"
-categories: [AI, libraries, datasets, GLAM, community]
+categories: [libraries, datasets, glam]
 description: "From data providers to AI partners: How libraries can collaborate with developers to build tools that improve collections, enhance discovery, and serve communities while contributing to responsible AI development."
 image: "https://github.com/davanstrien/blog/blob/7f7b15b8a85a9967f18b994b7c80f1cbbcfedbb0/posts/2025/who-benefits-rethinking-library-data-ai/assets/finebooks-illusration.png?raw=true"
 draft: false
