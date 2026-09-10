@@ -9,7 +9,6 @@ image-alt: "A hand selecting a card from an index with labelled drawers."
 open-graph: true
 twitter-card:
   card-style: summary_large_image
-draft: true
 format:
   html:
     toc: false
@@ -43,7 +42,7 @@ The agent sampled documents, proposed a labelling guide and labelled examples. I
 
 ## Building and checking the classifier
 
-We used [SetFit](https://huggingface.co/docs/setfit/index), a library for training text classifiers from small labelled datasets, with a [149-million-parameter ModernBERT encoder](https://huggingface.co/nomic-ai/modernbert-embed-base). The agent wrote the scripts and ran training and comparisons on Jobs. Long documents were represented by excerpts from their beginning, middle and end.
+We used [SetFit](https://huggingface.co/docs/setfit/index), a library for training text classifiers from small labelled datasets, with a [149-million-parameter ModernBERT encoder](https://huggingface.co/nomic-ai/modernbert-embed-base). The agent wrote the scripts and ran training and comparisons on Jobs. Long documents were represented by excerpts from their beginning, middle and end. The [trained classifier and prediction helper](https://huggingface.co/davanstrien/finepdfs-edu-purpose-classifier) are available on the Hub.
 
 We compared classifier settings and training-data choices, including whether fine-tuning helped over using the original embeddings. We also repeated training with three random seeds to check how much the results varied.
 
@@ -87,7 +86,7 @@ job = api.run_uv_job(
 )
 ```
 
-Here, `run_environment` includes the pinned input revision and runtime settings. The [complete inference script](https://huggingface.co/datasets/davanstrien/finepdfs-doctype-experiments-20260908/blob/b6486c0a9b385a2a5c47e03d6e7666a88b319c6a/one-percent-20260909/inputs/classify.py) also handles saving progress and checking inputs.
+Here, `run_environment` includes the pinned input revision and runtime settings. The [complete inference script](https://huggingface.co/davanstrien/finepdfs-edu-purpose-classifier/blob/main/reproduction/classify.py) also handles saving progress and checking inputs.
 
 We sampled **230,234 source rows: 1% of the English subset**. After language and text checks, **191,724 received predictions**; excluded rows were retained with reasons. This sampled row groups across all 100 English files, so it is a clustered sample.
 
