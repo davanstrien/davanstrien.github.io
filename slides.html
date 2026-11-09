@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -41,14 +41,15 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8d3ad9c781c51ccd60b292c95058b2c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -98,12 +99,6 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
   </script>
 <script defer="" src="https://cloud.umami.is/script.js" data-website-id="85cb27d6-dbf9-43d7-97d0-be4e6724de7a"></script>
 <meta name="msvalidate.01" content="4246174F24A3CB7C9CBEAA94E1FF8E84">
@@ -142,19 +137,18 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Daniel van Strien</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -194,6 +188,7 @@ window.Quarto = {
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -221,7 +216,7 @@ window.Quarto = {
         
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Y29sbGFib3JhdGlvbg==">collaboration <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGF0YXNldHM=">datasets <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZGlnaXRhbC1odW1hbml0aWVz">digital-humanities <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R0xBTQ==">GLAM <span class="quarto-category-count">(3)</span></div><div class="category" data-category="SUlJRg==">IIIF <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW5mcmFzdHJ1Y3R1cmU=">infrastructure <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFjaGluZS1sZWFybmluZw==">machine-learning <span class="quarto-category-count">(2)</span></div><div class="category" data-category="b3Blbi1zb3VyY2U=">open-source <span class="quarto-category-count">(2)</span></div><div class="category" data-category="c21hbGwtbW9kZWxz">small-models <span class="quarto-category-count">(2)</span></div><div class="category" data-category="dGFsaw==">talk <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content" tabindex="-1">
 
 
 
@@ -233,18 +228,18 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R0xBTSUyQ2luZnJhc3RydWN0dXJlJTJDZGF0YXNldHMlMkNjb2xsYWJvcmF0aW9uJTJDb3Blbi1zb3VyY2UlMkN0YWxr" data-listing-date-sort="1782432000000" data-listing-file-modified-sort="1789067472713" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1470">
-<div class="thumbnail"><a href="./slides/glam-labs-futures-2026/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="0" data-categories="R0xBTSUyQ2luZnJhc3RydWN0dXJlJTJDZGF0YXNldHMlMkNjb2xsYWJvcmF0aW9uJTJDb3Blbi1zb3VyY2UlMkN0YWxr" data-listing-date-sort="1782432000000" data-listing-file-modified-sort="1794223477808" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1470">
+<div class="thumbnail"><a href="./slides/glam-labs-futures-2026/index.html" class="no-external-icon" aria-hidden="true" tabindex="-1">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./slides/glam-labs-futures-2026/index.html" class="no-external">Infrastructure is the friends you made along the way</a>
+<a href="./slides/glam-labs-futures-2026/index.html" class="no-external-icon">Infrastructure is the friends you made along the way</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./slides/glam-labs-futures-2026/index.html" class="no-external">Why collaboration and shared data matter more than servers</a>
+<a href="./slides/glam-labs-futures-2026/index.html" class="no-external-icon">Why collaboration and shared data matter more than servers</a>
 </div>
 <div class="listing-categories">
 
@@ -261,12 +256,14 @@ window.Quarto = {
 <div class="listing-category" onclick="window.quartoListingCategory('dGFsaw=='); return false;">talk</div>
 
 </div>
-<div class="delink listing-description"><a href="./slides/glam-labs-futures-2026/index.html" class="no-external">
+<div class="listing-description">
+<a href="./slides/glam-labs-futures-2026/index.html" class="no-external-icon">
 <p>Lightning talk for the ‘Labs in Research Data Infrastructures for Cultural Heritage’ session at GLAM Labs Futures, Edinburgh, 26 June 2026.</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./slides/glam-labs-futures-2026/index.html" class="no-external">
+<a href="./slides/glam-labs-futures-2026/index.html" class="no-external-icon">
 <div class="listing-date">
 Jun 26, 2026
 </div>
@@ -276,18 +273,18 @@ Daniel van Strien
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="R0xBTSUyQ21hY2hpbmUtbGVhcm5pbmclMkNzbWFsbC1tb2RlbHMlMkNvcGVuLXNvdXJjZSUyQ2RpZ2l0YWwtaHVtYW5pdGllcw==" data-listing-date-sort="1777939200000" data-listing-file-modified-sort="1789067472711" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1796">
-<div class="thumbnail"><a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="1" data-categories="R0xBTSUyQ21hY2hpbmUtbGVhcm5pbmclMkNzbWFsbC1tb2RlbHMlMkNvcGVuLXNvdXJjZSUyQ2RpZ2l0YWwtaHVtYW5pdGllcw==" data-listing-date-sort="1777939200000" data-listing-file-modified-sort="1794223477807" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1796">
+<div class="thumbnail"><a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external-icon" aria-hidden="true" tabindex="-1">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external">Beyond the API</a>
+<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external-icon">Beyond the API</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external">Open and local models for digital humanities and cultural heritage</a>
+<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external-icon">Open and local models for digital humanities and cultural heritage</a>
 </div>
 <div class="listing-categories">
 
@@ -302,12 +299,14 @@ Daniel van Strien
 <div class="listing-category" onclick="window.quartoListingCategory('ZGlnaXRhbC1odW1hbml0aWVz'); return false;">digital-humanities</div>
 
 </div>
-<div class="delink listing-description"><a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external">
+<div class="listing-description">
+<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external-icon">
 <p>DHd Working Group on Applied Generative AI webinar — what ‘open’ means in AI, how to actually run open models, and what DH and cultural heritage practitioners can give back.</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external">
+<a href="./slides/dhd-webinar-2026-may-05/index.html" class="no-external-icon">
 <div class="listing-date">
 May 5, 2026
 </div>
@@ -317,18 +316,18 @@ Daniel van Strien
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="SUlJRiUyQ0dMQU0lMkNtYWNoaW5lLWxlYXJuaW5nJTJDc21hbGwtbW9kZWxz" data-listing-date-sort="1770768000000" data-listing-file-modified-sort="1789067472714" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="431">
-<div class="thumbnail"><a href="./slides/iiif-illustration-detector/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="2" data-categories="SUlJRiUyQ0dMQU0lMkNtYWNoaW5lLWxlYXJuaW5nJTJDc21hbGwtbW9kZWxz" data-listing-date-sort="1770768000000" data-listing-file-modified-sort="1794223477809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="431">
+<div class="thumbnail"><a href="./slides/iiif-illustration-detector/index.html" class="no-external-icon" aria-hidden="true" tabindex="-1">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./slides/iiif-illustration-detector/index.html" class="no-external">Finding Illustrations in Digitized Collections with a 2.5MB Browser Model</a>
+<a href="./slides/iiif-illustration-detector/index.html" class="no-external-icon">Finding Illustrations in Digitized Collections with a 2.5MB Browser Model</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./slides/iiif-illustration-detector/index.html" class="no-external">IIIF Community Call</a>
+<a href="./slides/iiif-illustration-detector/index.html" class="no-external-icon">IIIF Community Call</a>
 </div>
 <div class="listing-categories">
 
@@ -341,12 +340,14 @@ Daniel van Strien
 <div class="listing-category" onclick="window.quartoListingCategory('c21hbGwtbW9kZWxz'); return false;">small-models</div>
 
 </div>
-<div class="delink listing-description"><a href="./slides/iiif-illustration-detector/index.html" class="no-external">
+<div class="listing-description">
+<a href="./slides/iiif-illustration-detector/index.html" class="no-external-icon">
 <p>A browser-based tool for detecting illustrations in digitized cultural heritage collections using a tiny machine learning model that runs entirely client-side via IIIF.</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./slides/iiif-illustration-detector/index.html" class="no-external">
+<a href="./slides/iiif-illustration-detector/index.html" class="no-external-icon">
 <div class="listing-date">
 Feb 11, 2026
 </div>
@@ -356,25 +357,27 @@ Daniel van Strien
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1764720000000" data-listing-file-modified-sort="1789067472715" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1305">
-<div class="thumbnail"><a href="./slides/open-source-ai-glams/index.html" class="no-external">
+<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1764720000000" data-listing-file-modified-sort="1794223477810" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1305">
+<div class="thumbnail"><a href="./slides/open-source-ai-glams/index.html" class="no-external-icon" aria-hidden="true" tabindex="-1">
 
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./slides/open-source-ai-glams/index.html" class="no-external">Open Source AI for GLAMs</a>
+<a href="./slides/open-source-ai-glams/index.html" class="no-external-icon">Open Source AI for GLAMs</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./slides/open-source-ai-glams/index.html" class="no-external">From Using to Contributing (AI4LAM Fantastic Futures 2025 Workshop)</a>
+<a href="./slides/open-source-ai-glams/index.html" class="no-external-icon">From Using to Contributing (AI4LAM Fantastic Futures 2025 Workshop)</a>
 </div>
-<div class="delink listing-description"><a href="./slides/open-source-ai-glams/index.html" class="no-external">
+<div class="listing-description">
+<a href="./slides/open-source-ai-glams/index.html" class="no-external-icon">
 <p>An introduction to open source AI for galleries, libraries, archives and museums - covering what makes AI open, how to run models, and how GLAMs can contribute back to the ecosystem.</p>
-</a></div>
+</a>
+</div>
 </div>
 <div class="metadata">
-<a href="./slides/open-source-ai-glams/index.html" class="no-external">
+<a href="./slides/open-source-ai-glams/index.html" class="no-external-icon">
 <div class="listing-date">
 Dec 3, 2025
 </div>
@@ -465,7 +468,8 @@ Daniel van Strien
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -474,8 +478,69 @@ Daniel van Strien
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -489,6 +554,7 @@ Daniel van Strien
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -651,44 +717,54 @@ Daniel van Strien
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -786,6 +862,9 @@ Daniel van Strien
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 

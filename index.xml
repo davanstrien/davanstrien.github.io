@@ -9,7 +9,7 @@
 <link>https://danielvanstrien.xyz/</link>
 <atom:link href="https://danielvanstrien.xyz/index.xml" rel="self" type="application/rss+xml"/>
 <description>Daniel van Strien&#39;s blog</description>
-<generator>quarto-1.10.18</generator>
+<generator>quarto-1.11.9</generator>
 <lastBuildDate>Thu, 10 Sep 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Building data curation classifiers with agents, SetFit and Jobs</title>
@@ -204,7 +204,7 @@ Figure&nbsp;3: The Jobs bar is based on measured runtime; the two API bars are b
   <category>huggingface</category>
   <guid>https://danielvanstrien.xyz/posts/2026/agents-data-curation/</guid>
   <pubDate>Thu, 10 Sep 2026 00:00:00 GMT</pubDate>
-  <media:content url="https://danielvanstrien.xyz/posts/2026/agents-data-curation/card-index.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://danielvanstrien.xyz/posts/2026/agents-data-curation/card-index.jpg" medium="image" type="image/jpeg" height="93" width="144"/>
 </item>
 <item>
   <title>Distilling Qwen3.8 with datatrove on Hugging Face Jobs</title>
@@ -228,6 +228,7 @@ Figure&nbsp;3: The Jobs bar is based on measured runtime; the two API bars are b
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
+
 <pre class="mermaid mermaid-js">%%{init: {"theme": "neutral", "themeVariables": {"fontFamily": "sans-serif"}}}%%
 flowchart LR
     subgraph laptop["laptop — CPU only"]
@@ -369,7 +370,7 @@ background-color: null;
 font-style: inherit;">False</span>}},</span>
 <span id="cb3-7">)</span></code></pre></div></div>
 <p>The winning prompt ended up being rather short:</p>
-<div class="callout callout-style-default callout-note callout-titled" title="The full teacher prompt">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -3244,7 +3245,7 @@ Domain rules:
 
 
 
-<div class="callout callout-style-default callout-note callout-titled" title="Update (July 2026)">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -7183,135 +7184,70 @@ font-style: inherit;">=</span> HfApi()</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">Signature:</span>
-
 api.run_uv_job(
-
     script: <span class="ansi-yellow-fg">'str'</span>,
-
     *,
-
     script_args: <span class="ansi-yellow-fg">'Optional[List[str]]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     dependencies: <span class="ansi-yellow-fg">'Optional[List[str]]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     python: <span class="ansi-yellow-fg">'Optional[str]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     image: <span class="ansi-yellow-fg">'Optional[str]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     env: <span class="ansi-yellow-fg">'Optional[Dict[str, Any]]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     secrets: <span class="ansi-yellow-fg">'Optional[Dict[str, Any]]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     flavor: <span class="ansi-yellow-fg">'Optional[SpaceHardware]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     timeout: <span class="ansi-yellow-fg">'Optional[Union[int, float, str]]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     namespace: <span class="ansi-yellow-fg">'Optional[str]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     token: <span class="ansi-yellow-fg">'Union[bool, str, None]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
     _repo: <span class="ansi-yellow-fg">'Optional[str]'</span> = <span style="font-weight:bold;color:rgb(0,135,0)">None</span>,
-
 ) -&gt; <span class="ansi-yellow-fg">'JobInfo'</span>
-
 <span class="ansi-red-fg">Docstring:</span>
-
 Run a UV script Job on Hugging Face infrastructure.
 
-
-
 Args:
-
     script (`str`):
-
         Path or URL of the UV script.
 
-
-
     script_args (`List[str]`, *optional*)
-
         Arguments to pass to the script.
 
-
-
     dependencies (`List[str]`, *optional*)
-
         Dependencies to use to run the UV script.
 
-
-
     python (`str`, *optional*)
-
         Use a specific Python version. Default is 3.12.
 
-
-
     image (`str`, *optional*, defaults to "ghcr.io/astral-sh/uv:python3.12-bookworm"):
-
         Use a custom Docker image with `uv` installed.
 
-
-
     env (`Dict[str, Any]`, *optional*):
-
         Defines the environment variables for the Job.
 
-
-
     secrets (`Dict[str, Any]`, *optional*):
-
         Defines the secret environment variables for the Job.
 
-
-
     flavor (`str`, *optional*):
-
         Flavor for the hardware, as in Hugging Face Spaces. See [`SpaceHardware`] for possible values.
-
         Defaults to `"cpu-basic"`.
 
-
-
     timeout (`Union[int, float, str]`, *optional*):
-
         Max duration for the Job: int/float with s (seconds, default), m (minutes), h (hours) or d (days).
-
         Example: `300` or `"5m"` for 5 minutes.
 
-
-
     namespace (`str`, *optional*):
-
         The namespace where the Job will be created. Defaults to the current user's namespace.
 
-
-
     token `(Union[bool, str, None]`, *optional*):
-
         A valid user access token. If not provided, the locally saved token will be used, which is the
-
         recommended authentication method. Set to `False` to disable authentication.
-
         Refer to: https://huggingface.co/docs/huggingface_hub/quick-start#authentication.
-
-
 
 Example:
 
-
-
     ```python
-
     &gt;&gt;&gt; from huggingface_hub import run_uv_job
-
     &gt;&gt;&gt; script = "https://raw.githubusercontent.com/huggingface/trl/refs/heads/main/trl/scripts/sft.py"
-
     &gt;&gt;&gt; run_uv_job(script, dependencies=["trl"], flavor="a10g-small")
-
     ```
-
 <span class="ansi-red-fg">File:</span>      ~/Documents/daniel/blog/.venv/lib/python3.12/site-packages/huggingface_hub/hf_api.py
-
 <span class="ansi-red-fg">Type:</span>      method</pre>
 </div>
 </div>
@@ -11030,11 +10966,8 @@ font-style: inherit;">|</span> grep DeepSeek</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-bright-cyan-fg">lmstudio-community/DeepSeek-R1-Distill-Qwen-1.5B-GGUF</span>      <span class="ansi-bright-cyan-fg">1.12 GB</span>          <span class="ansi-bright-cyan-fg">Qwen2</span>           
-
 <span class="ansi-bright-cyan-fg">lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF</span>        <span class="ansi-bright-cyan-fg">4.68 GB</span>          <span class="ansi-bright-cyan-fg">Qwen2</span>           
-
 <span class="ansi-bright-cyan-fg">lmstudio-community/DeepSeek-R1-Distill-Qwen-14B-GGUF</span>       <span class="ansi-bright-cyan-fg">8.99 GB</span>          <span class="ansi-bright-cyan-fg">Qwen2</span>           
-
 <span class="ansi-bright-cyan-fg">lmstudio-community/DeepSeek-R1-Distill-Llama-8B-GGUF</span>       <span class="ansi-bright-cyan-fg">4.92 GB</span>          <span class="ansi-bright-cyan-fg">Llama</span>           
 </pre>
 </div>
@@ -11075,13 +11008,9 @@ font-style: inherit;">-</span>GGUF</span></code></pre></div></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre>Loading model "lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf"...
-
 <span class="ansi-bright-white-fg">[LMStudioClient][LLM]</span> Start loading model lmstudio-community/DeepSeek-R1-Distill-Qwen-7B-GGUF/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf...
-
 ⠹ [█████████████████████▋                            ] 43.04%          sl          ] 32.15%          ] 34.82%          █████████████████▋                                ] 35.25%          Model loaded successfully in 4.20s. (4.68 GB)
-
 To use the model in the API/SDK, use the identifier "<span class="ansi-bright-green-fg">deepseek-r1-distill-qwen-7b</span>".
-
 To set a custom identifier, use the <span class="ansi-bright-yellow-fg">--identifier &lt;identifier&gt;</span> option.
 </pre>
 </div>
@@ -14724,9 +14653,7 @@ font-style: inherit;">import</span> wandb</span></code></pre></div></div>
 <div class="cell-output cell-output-stderr">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-blue-fg ansi-bold">wandb</span>: Logging into wandb.ai. (Learn how to deploy a W&amp;B server locally: https://wandb.me/wandb-server)
-
 <span class="ansi-blue-fg ansi-bold">wandb</span>: You can find your API key in your browser here: https://wandb.ai/authorize
-
 <span class="ansi-blue-fg ansi-bold">wandb</span>: Paste an API key from your profile and hit enter, or press ctrl+c to quit:</pre>
 </div>
 </div>

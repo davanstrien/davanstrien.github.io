@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -77,14 +77,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../icons/favicon.ico" rel="icon">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-8d3ad9c781c51ccd60b292c95058b2c2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,19 +125,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed fullcontent quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Daniel van Strien</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -176,6 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -185,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -233,47 +234,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre>     |████████████████████████████████| 194kB 3.5MB/s 
-
      |████████████████████████████████| 204kB 8.2MB/s 
-
      |████████████████████████████████| 1.1MB 10.9MB/s 
-
   Installing build dependencies ... done
-
   Getting requirements to build wheel ... done
-
     Preparing wheel metadata ... done
-
      |████████████████████████████████| 81kB 7.6MB/s 
-
      |████████████████████████████████| 3.6MB 16.8MB/s 
-
      |████████████████████████████████| 450kB 45.4MB/s 
-
      |████████████████████████████████| 81kB 7.4MB/s 
-
      |████████████████████████████████| 112kB 53.0MB/s 
-
      |████████████████████████████████| 51kB 6.5MB/s 
-
      |████████████████████████████████| 61kB 8.0MB/s 
-
      |████████████████████████████████| 645kB 54.2MB/s 
-
      |████████████████████████████████| 102kB 11.6MB/s 
-
   Building wheel for alembic (PEP 517) ... done
-
   Building wheel for optuna (setup.py) ... done
-
   Building wheel for psutil (setup.py) ... done
-
   Building wheel for pyperclip (setup.py) ... done
-
   Building wheel for locket (setup.py) ... done
-
   Building wheel for contextvars (setup.py) ... done
-
 <span class="ansi-red-fg">ERROR: distributed 2.18.0 has requirement tornado&gt;=5; python_version &lt; "3.8", but you'll have tornado 4.5.3 which is incompatible.</span>
 </pre>
 </div>
@@ -723,23 +703,14 @@ Progress bar is experimental (supported from v1.2.0). The interface can change i
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg">[I 2020-06-05 15:12:20,128]</span> Finished trial#0 with value: 0.00440805109922757 with parameters: {'learning_rate_frozen': 0.00014124685078723662, 'head_epochs': 5, 'learning_rate_unfrozen': 0.00010276862511970148, 'lm_body_epochs': 1}. Best is trial#0 with value: 0.00440805109922757.
-
 (#4) [0,4.713407516479492,3.7350399494171143,'00:24']
-
 (#4) [1,3.998744249343872,3.3055806159973145,'00:24']
-
 (#4) [2,3.6486754417419434,3.192685842514038,'00:24']
-
 (#4) [3,3.4996860027313232,3.1756556034088135,'00:24']
-
 (#4) [0,3.4227023124694824,3.163315534591675,'00:27']
-
 (#4) [1,3.3954737186431885,3.140226364135742,'00:27']
-
 (#4) [2,3.3778774738311768,3.125929117202759,'00:27']
-
 (#4) [3,3.357388973236084,3.119621753692627,'00:27']
-
 (#4) [4,3.3542206287384033,3.1186859607696533,'00:27']
 </pre>
 </div>
@@ -787,19 +758,12 @@ Progress bar is experimental (supported from v1.2.0). The interface can change i
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg">[I 2020-06-05 15:16:49,562]</span> Finished trial#1 with value: 0.45236502121696065 with parameters: {'learning_rate_frozen': 0.0060643425219262335, 'head_epochs': 4, 'learning_rate_unfrozen': 2.734844423029637e-05, 'lm_body_epochs': 5}. Best is trial#1 with value: 0.45236502121696065.
-
 (#4) [0,5.3748459815979,4.851675987243652,'00:24']
-
 (#4) [1,5.247058868408203,4.672318935394287,'00:24']
-
 (#4) [2,5.111597061157227,4.559732437133789,'00:24']
-
 (#4) [3,5.026832103729248,4.512131690979004,'00:24']
-
 (#4) [4,4.982809066772461,4.5044732093811035,'00:24']
-
 (#4) [0,4.915407657623291,4.423311233520508,'00:27']
-
 (#4) [1,4.857243061065674,4.394893646240234,'00:27']
 </pre>
 </div>
@@ -847,7 +811,6 @@ Progress bar is experimental (supported from v1.2.0). The interface can change i
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg">[I 2020-06-05 15:20:20,119]</span> Finished trial#2 with value: 0.013588651008106425 with parameters: {'learning_rate_frozen': 0.0001971120155925954, 'head_epochs': 5, 'learning_rate_unfrozen': 1.0649951798153689e-05, 'lm_body_epochs': 2}. Best is trial#1 with value: 0.45236502121696065.
-
 
 </pre>
 </div>
@@ -1514,7 +1477,6 @@ Progress bar is experimental (supported from v1.2.0). The interface can change i
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg">[I 2020-06-07 15:03:57,405]</span> Finished trial#0 with value: 0.8729641116526362 with parameters: {'apply_tfms': True, 'do_flip': False, 'epochs': 5, 'flip_vert': True, 'learning_rate': 0.00015848931798245758, 'max_lighting': 0.5155363265412508, 'max_rotate': 93.50185801538605, 'max_zoom': 2.5014402368129147, 'model': 'resnet50', 'mult': 0.7973732804273224, 'unfrozen_epochs': 2, 'unfrozen_learning_rate': 1.4454397387453355e-05}. Best is trial#0 with value: 0.8729641116526362.
 
-
 </pre>
 </div>
 </div>
@@ -1550,7 +1512,6 @@ Progress bar is experimental (supported from v1.2.0). The interface can change i
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-green-fg">[I 2020-06-07 15:04:18,823]</span> Finished trial#1 with value: 0.4545249081834448 with parameters: {'apply_tfms': False, 'epochs': 1, 'learning_rate': 1.4039901997074766e-05, 'model': 'resnet18', 'unfrozen_epochs': 1, 'unfrozen_learning_rate': 4.041607859100835e-07}. Best is trial#0 with value: 0.8729641116526362.
-
 
 </pre>
 </div>
@@ -2089,7 +2050,8 @@ Name: 96, dtype: object</code></pre>
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -2098,8 +2060,69 @@ Name: 96, dtype: object</code></pre>
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -2113,6 +2136,7 @@ Name: 96, dtype: object</code></pre>
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -2275,44 +2299,54 @@ Name: 96, dtype: object</code></pre>
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -2410,6 +2444,9 @@ Name: 96, dtype: object</code></pre>
       }
     }
   });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script>
 </div> <!-- /content -->
 
