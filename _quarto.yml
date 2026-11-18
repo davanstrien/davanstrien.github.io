@@ -7,6 +7,8 @@ website:
   site-url: https://danielvanstrien.xyz
   description: "Daniel van Strien's blog"
   favicon: icons/favicon.ico
+  open-graph: true
+  twitter-card: true
   navbar:
     right:
       - text: "AI Patterns for GLAM"
