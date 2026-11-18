@@ -5,6 +5,8 @@ author: "Daniel van Strien"
 categories: [ocr, glam, huggingface, benchmarks]
 description: "I ran eight open OCR models from the last 18 months on the same 850 pages and the same GPU. The newest costs about a fifth of the oldest, and the model is only part of the reason."
 draft: false
+image: cost-trend.png
+image-alt: "Chart of the cost to read 1,000 pages with eight open OCR models by release date, falling from about $0.50 for RolmOCR in April 2025 to under $0.10 for LightOnOCR-3-0.8B in October 2026, with a dashed trend line halving about every 10 months."
 resources:
   - data.json
   - figures.js
