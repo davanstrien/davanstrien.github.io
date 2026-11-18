@@ -4,7 +4,7 @@ date: "2026-11-18"
 author: "Daniel van Strien"
 categories: [ocr, glam, huggingface, benchmarks]
 description: "I ran eight open OCR models from the last 18 months on the same 850 pages and the same GPU. The newest costs about a fifth of the oldest, and the model is only part of the reason."
-draft: true
+draft: false
 resources:
   - data.json
   - figures.js
