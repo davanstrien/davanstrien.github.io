@@ -1,5 +1,5 @@
 ---
-title: "OCR with open models got about 5× cheaper in 18 months. Here is where that came from."
+title: "OCR with open models got about 5× cheaper in 18 months"
 date: "2026-11-18"
 author: "Daniel van Strien"
 categories: [ocr, glam, huggingface, benchmarks]
@@ -47,9 +47,11 @@ import { makeFigures } from "./figures.js"
 F = makeFigures(data, Plot, d3)
 ```
 
+**tl;dr:** the newest open OCR model I tested reads 1,000 pages for under $0.10, about a fifth of what an April 2025 model cost, and it reads ordinary pages as well. Running models better saved me more than switching to the newer model did.
+
 ## The short version
 
-In February I wrote that you could [re-OCR a digitised collection for about $0.002 a page](../re-ocr-collections/index.qmd). That number is already out of date, so I measured it properly. I ran eight open OCR models, released between April 2025 and October 2026, on the same 850 pages, on the same GPU, served the same way.
+In February I wrote that you could [re-OCR a digitised collection for about $0.002 a page](../re-ocr-collections/index.qmd). That number is already out of date, so I measured it again (with some help from my agent). I ran eight open OCR models, released between April 2025 and October 2026, on the same 850 pages, on the same GPU, served the same way.
 
 Each dot is one model at the date it came out. Hover a dot for the exact cost, and use the menu to see one kind of page at a time.
 
@@ -61,15 +63,15 @@ F.figA({ pt: aPt, showVar: aShow.includes("April 2025 model at 1,288 px"), showT
 
 - **Cost:** reading 1,000 pages fell from $0.51 with the April 2025 model to $0.095 with the newest, LightOnOCR-3-0.8B. That is about five times cheaper in 18 months at the same image size.[^small-image] Five models from October 2025 to July 2026 cost $0.23 to $0.28 and are too close to rank.[^noise] The fitted trend halves the cost about every ten months, but I would not bet on it.[^toy]
 - **Quality:** on ordinary pages the cheaper models did not get worse. On book pages every model gets more than 99% of characters right on a typical page (not counting running headers), and a vision-model judge preferred the newest model to the April 2025 one on book and typed pages. On dense 18th-century print the April 2025 model still beat every later model except the newest, which about ties with it.
-- **Where the saving came from:** the model is only part of it. The same model got about four times cheaper from how I run it now, and the newest model is about three times cheaper again.
+- **Where the saving came from:** for one model on one kind of page, running it better cut the cost about four times: a vLLM server kept busy with many pages at once, instead of a script sending fixed batches, plus a bigger GPU and newer serving software. Swapping in a smaller, faster model cut it about three times more.
 - **What to use:** for book pages and typed documents, start with LightOnOCR-3-0.8B. It is the cheapest on all three kinds of page, and there it read as well as or better than the April 2025 model. For dense historical print, no model is clearly best: try it and the April 2025 model (RolmOCR) on a sample of your own pages first.
 - **What a collection costs:** with the newest model, a million pages is roughly $65 to $130 of GPU time, depending on the kind of page, and about a day and a half on one rented GPU for a mixed set.
 
-The rest of the post shows the evidence for each point. The details are in the appendix.
+The sections below show the evidence. The details are in the appendix.
 
 ## Did the cheaper models get worse?
 
-On ordinary pages, hardly. Median error rates on the 282 book pages with checked transcriptions run from 0.44% to 0.82%, and the newest model makes no more errors than the April 2025 one. Switch the measure to see the judge's verdicts; on dense print, only the newest model keeps up.[^judge]
+On ordinary pages, hardly. Median error rates on the 282 book pages with checked transcriptions run from 0.44% to 0.82%, scored with the text rules from [bhl-ocr-eval](https://github.com/finebooks/bhl-ocr-eval), the code behind the [BHL OCR leaderboard](https://huggingface.co/spaces/finebooks/bhl-ocr-leaderboard), and the newest model makes no more errors than the April 2025 one. Switch the measure to see the verdicts of a vision-model judge, using the prompt from [ocr-bench](https://github.com/davanstrien/ocr-bench); on dense print, only the newest model keeps up.[^judge]
 
 ```{ojs}
 viewof cQ = Inputs.select(F.C_OPTIONS, { label: "Quality measure" })
@@ -78,7 +80,9 @@ F.figC({ q: cQ }, width)
 
 ## Where the saving comes from
 
-I took one model, GLM-OCR from January 2026, and one kind of page, the 1771 Britannica. Run the way I ran it in February, on a small GPU, it cost $1.57 per 1,000 pages. Run the way I run things now, on a larger GPU, it cost $0.40. Swapping in the newest model brought it to $0.13.[^chain]
+I took one model, GLM-OCR from January 2026, and one kind of page, the 1771 Britannica. Run the way I ran it in February, it cost $1.57 per 1,000 pages. Then I changed how it runs: a vLLM server that [saturate](https://github.com/davanstrien/saturate) keeps fed with many pages at once, a larger GPU (an RTX PRO 6000 instead of an L4), page images fitted to 2,048 pixels, and a newer vLLM. That brought the same model to $0.40. Swapping in the newest model, LightOnOCR-3-0.8B, which is smaller and faster, brought it to $0.13.[^chain]
+
+I got less stupid. <!-- DANIEL: check wording -->In February my script sent pages in fixed batches of 64 and did its own processing between them, so the GPU sat idle about a quarter of the time. Now the server always has pages waiting.<!-- /DANIEL -->
 
 ```{ojs}
 F.figChain(width)
