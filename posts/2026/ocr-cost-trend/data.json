@@ -1,0 +1,1254 @@
+{
+ "meta": {
+  "gpu": "Nvidia RTX PRO 6000",
+  "price_per_hour": 2.75,
+  "longest_px": 2048,
+  "feed_seconds_per_slice": 600,
+  "page_counts": {
+   "books": 350,
+   "dense": 250,
+   "typed": 250
+  },
+  "books_pages_with_gt": 282,
+  "cost_measure": "clock-window rate, server start not included",
+  "trend_check": {
+   "halving_months": 9.59,
+   "r2": 0.717,
+   "halving_months_with_1288_baseline": 13.36,
+   "r2_with_1288_baseline": 0.507
+  }
+ },
+ "page_types": [
+  {
+   "key": "books",
+   "label": "Book pages",
+   "long": "historical book pages",
+   "n": 350
+  },
+  {
+   "key": "dense",
+   "label": "Dense print",
+   "long": "dense pages of the 1771 Britannica",
+   "n": 250
+  },
+  {
+   "key": "typed",
+   "label": "Typed pages",
+   "long": "pages from 44 typed and printed documents",
+   "n": 250
+  }
+ ],
+ "baseline": "rolmocr",
+ "judge_split_share": {
+  "books": 0.188,
+  "dense": 0.094,
+  "typed": 0.169
+ },
+ "books_blank_pages": 63,
+ "models": [
+  {
+   "slug": "rolmocr",
+   "name": "RolmOCR",
+   "release": "2025-04-02",
+   "params_b": 8.29,
+   "max_tokens": 4096,
+   "setup_note": null,
+   "cost": {
+    "all": 0.50919,
+    "books": 0.4802,
+    "dense": 0.64414,
+    "typed": 0.41483
+   },
+   "cost_whole_pump": {
+    "all": 0.51603,
+    "books": 0.47053,
+    "dense": 0.67071,
+    "typed": 0.42504
+   },
+   "pages_per_s": {
+    "books": 1.59078,
+    "dense": 1.18591,
+    "typed": 1.84143
+   },
+   "capped_share": {
+    "books": 0.07714,
+    "dense": 0.02,
+    "typed": 0.02
+   },
+   "capped_share_scored": {
+    "books": 0.0771,
+    "dense": 0.02,
+    "typed": 0.02
+   },
+   "capped_output_token_share": {
+    "books": 0.45973,
+    "dense": 0.07017,
+    "typed": 0.10318
+   },
+   "drain_s": {
+    "books": 155.92142,
+    "dense": 143.39683,
+    "typed": 110.78974
+   },
+   "mean_prompt_tokens": {
+    "books": 3710.60016,
+    "dense": 4013.26179,
+    "typed": 4021.47027
+   },
+   "mean_completion_tokens": {
+    "books": 798.08795,
+    "dense": 1376.77123,
+    "typed": 559.13615
+   },
+   "server_start_s": 250.4,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.005,
+    "tolerant_ci95": [
+     0.0039,
+     0.0066
+    ],
+    "plain": 0.0193,
+    "plain_ci95": [
+     0.0181,
+     0.0206
+    ]
+   },
+   "judge": null
+  },
+  {
+   "slug": "dots-ocr",
+   "name": "dots.ocr",
+   "release": "2025-07-30",
+   "params_b": 3.04,
+   "max_tokens": 16384,
+   "setup_note": null,
+   "cost": {
+    "all": 0.44625,
+    "books": 0.36708,
+    "dense": 0.56623,
+    "typed": 0.4371
+   },
+   "cost_whole_pump": {
+    "all": 0.5082,
+    "books": 0.43987,
+    "dense": 0.59647,
+    "typed": 0.51558
+   },
+   "pages_per_s": {
+    "books": 2.08097,
+    "dense": 1.34908,
+    "typed": 1.74763
+   },
+   "capped_share": {
+    "books": 0.01714,
+    "dense": 0.016,
+    "typed": 0.024
+   },
+   "capped_share_scored": {
+    "books": 0.0171,
+    "dense": 0.016,
+    "typed": 0.024
+   },
+   "capped_output_token_share": {
+    "books": 0.39918,
+    "dense": 0.12511,
+    "typed": 0.32905
+   },
+   "drain_s": {
+    "books": 198.91834,
+    "dense": 154.86762,
+    "typed": 210.87168
+   },
+   "mean_prompt_tokens": {
+    "books": 3683.87968,
+    "dense": 3995.61427,
+    "typed": 4000.64143
+   },
+   "mean_completion_tokens": {
+    "books": 709.70389,
+    "dense": 1625.10031,
+    "typed": 911.32696
+   },
+   "server_start_s": 248.4,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0047,
+    "tolerant_ci95": [
+     0.0038,
+     0.0055
+    ],
+    "plain": 0.0175,
+    "plain_ci95": [
+     0.0157,
+     0.0191
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 21,
+     "baseline_wins": 11,
+     "no_clear": 18,
+     "win_share_decisive": 0.656,
+     "ci95": [
+      0.483,
+      0.796
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 7,
+     "baseline_wins": 41,
+     "no_clear": 2,
+     "win_share_decisive": 0.146,
+     "ci95": [
+      0.072,
+      0.272
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 17,
+     "baseline_wins": 18,
+     "no_clear": 14,
+     "win_share_decisive": 0.486,
+     "ci95": [
+      0.33,
+      0.644
+     ]
+    }
+   }
+  },
+  {
+   "slug": "olmocr2",
+   "name": "olmOCR-2",
+   "release": "2025-10-06",
+   "params_b": 8.29,
+   "max_tokens": 8000,
+   "setup_note": null,
+   "cost": {
+    "all": 0.22924,
+    "books": 0.17484,
+    "dense": 0.30834,
+    "typed": 0.2263
+   },
+   "cost_whole_pump": {
+    "all": 0.2333,
+    "books": 0.18034,
+    "dense": 0.30862,
+    "typed": 0.23212
+   },
+   "pages_per_s": {
+    "books": 4.36919,
+    "dense": 2.47739,
+    "typed": 3.37557
+   },
+   "capped_share": {
+    "books": 0.00857,
+    "dense": 0.008,
+    "typed": 0.008
+   },
+   "capped_share_scored": {
+    "books": 0.0086,
+    "dense": 0.008,
+    "typed": 0.008
+   },
+   "capped_output_token_share": {
+    "books": 0.12641,
+    "dense": 0.0303,
+    "typed": 0.11054
+   },
+   "drain_s": {
+    "books": 122.59277,
+    "dense": 90.4492,
+    "typed": 142.56643
+   },
+   "mean_prompt_tokens": {
+    "books": 1577.02385,
+    "dense": 1706.99298,
+    "typed": 1707.16973
+   },
+   "mean_completion_tokens": {
+    "books": 516.87782,
+    "dense": 1389.52105,
+    "typed": 710.3726
+   },
+   "server_start_s": 268.0,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0049,
+    "tolerant_ci95": [
+     0.0041,
+     0.0061
+    ],
+    "plain": 0.0196,
+    "plain_ci95": [
+     0.0179,
+     0.0213
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 16,
+     "baseline_wins": 20,
+     "no_clear": 14,
+     "win_share_decisive": 0.444,
+     "ci95": [
+      0.295,
+      0.604
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 11,
+     "baseline_wins": 36,
+     "no_clear": 3,
+     "win_share_decisive": 0.234,
+     "ci95": [
+      0.136,
+      0.372
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 10,
+     "baseline_wins": 16,
+     "no_clear": 23,
+     "win_share_decisive": 0.385,
+     "ci95": [
+      0.224,
+      0.575
+     ]
+    }
+   }
+  },
+  {
+   "slug": "paddleocr-vl",
+   "name": "PaddleOCR-VL",
+   "release": "2025-10-16",
+   "params_b": 0.96,
+   "max_tokens": 4096,
+   "setup_note": "Run on whole pages without the layout step its own pipeline uses.",
+   "cost": {
+    "all": 0.22854,
+    "books": 0.19853,
+    "dense": 0.26592,
+    "typed": 0.23318
+   },
+   "cost_whole_pump": {
+    "all": 0.22487,
+    "books": 0.18979,
+    "dense": 0.26493,
+    "typed": 0.2339
+   },
+   "pages_per_s": {
+    "books": 3.84774,
+    "dense": 2.87266,
+    "typed": 3.27593
+   },
+   "capped_share": {
+    "books": 0.06,
+    "dense": 0.156,
+    "typed": 0.26
+   },
+   "capped_share_scored": {
+    "books": 0.06,
+    "dense": 0.156,
+    "typed": 0.26
+   },
+   "capped_output_token_share": {
+    "books": 0.38164,
+    "dense": 0.32912,
+    "typed": 0.76838
+   },
+   "drain_s": {
+    "books": 52.50647,
+    "dense": 54.04901,
+    "typed": 56.35322
+   },
+   "mean_prompt_tokens": {
+    "books": 3418.98782,
+    "dense": 3544.00424,
+    "typed": 3541.34888
+   },
+   "mean_completion_tokens": {
+    "books": 698.34893,
+    "dense": 2018.17541,
+    "typed": 1360.03125
+   },
+   "server_start_s": 242.4,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0062,
+    "tolerant_ci95": [
+     0.0049,
+     0.0075
+    ],
+    "plain": 0.0064,
+    "plain_ci95": [
+     0.0049,
+     0.0078
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 13,
+     "baseline_wins": 24,
+     "no_clear": 13,
+     "win_share_decisive": 0.351,
+     "ci95": [
+      0.218,
+      0.512
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 3,
+     "baseline_wins": 46,
+     "no_clear": 1,
+     "win_share_decisive": 0.061,
+     "ci95": [
+      0.021,
+      0.165
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 9,
+     "baseline_wins": 31,
+     "no_clear": 9,
+     "win_share_decisive": 0.225,
+     "ci95": [
+      0.123,
+      0.375
+     ]
+    }
+   }
+  },
+  {
+   "slug": "deepseek-ocr",
+   "name": "DeepSeek-OCR",
+   "release": "2025-10-17",
+   "params_b": 3.34,
+   "max_tokens": 7033,
+   "setup_note": "Run with its plain-text prompt (not its default document prompt) and a 7,033-token output limit.",
+   "cost": {
+    "all": 0.28033,
+    "books": 0.2452,
+    "dense": 0.29239,
+    "typed": 0.31744
+   },
+   "cost_whole_pump": {
+    "all": 0.28242,
+    "books": 0.23832,
+    "dense": 0.29631,
+    "typed": 0.33027
+   },
+   "pages_per_s": {
+    "books": 3.11534,
+    "dense": 2.61256,
+    "typed": 2.40639
+   },
+   "capped_share": {
+    "books": 0.13429,
+    "dense": 0.08,
+    "typed": 0.204
+   },
+   "capped_share_scored": {
+    "books": 0.1343,
+    "dense": 0.08,
+    "typed": 0.204
+   },
+   "capped_output_token_share": {
+    "books": 0.68608,
+    "dense": 0.32379,
+    "typed": 0.77447
+   },
+   "drain_s": {
+    "books": 224.75376,
+    "dense": 116.10867,
+    "typed": 279.801
+   },
+   "mean_prompt_tokens": {
+    "books": 805.17202,
+    "dense": 908.0,
+    "typed": 905.57248
+   },
+   "mean_completion_tokens": {
+    "books": 1333.20076,
+    "dense": 1916.88847,
+    "typed": 1704.65307
+   },
+   "server_start_s": 193.9,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0082,
+    "tolerant_ci95": [
+     0.0058,
+     0.0102
+    ],
+    "plain": 0.0209,
+    "plain_ci95": [
+     0.0193,
+     0.0221
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 10,
+     "baseline_wins": 29,
+     "no_clear": 11,
+     "win_share_decisive": 0.256,
+     "ci95": [
+      0.146,
+      0.411
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 4,
+     "baseline_wins": 44,
+     "no_clear": 2,
+     "win_share_decisive": 0.083,
+     "ci95": [
+      0.033,
+      0.196
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 7,
+     "baseline_wins": 25,
+     "no_clear": 17,
+     "win_share_decisive": 0.219,
+     "ci95": [
+      0.11,
+      0.388
+     ]
+    }
+   },
+   "setup_effect": {
+    "source": "diag-deepseek/compare-diag1.json",
+    "capped_share_plain": {
+     "books": 0.1343,
+     "dense": 0.08,
+     "typed": 0.204
+    },
+    "capped_share_default": {
+     "books": 0.0029,
+     "dense": 0.028,
+     "typed": 0.128
+    },
+    "cer_tolerant_plain": 0.0082,
+    "cer_tolerant_default": 0.0156
+   }
+  },
+  {
+   "slug": "glm-ocr",
+   "name": "GLM-OCR",
+   "release": "2026-01-30",
+   "params_b": 1.33,
+   "max_tokens": 8192,
+   "setup_note": "Run on whole pages without the layout step its own pipeline uses.",
+   "cost": {
+    "all": 0.27826,
+    "books": 0.20461,
+    "dense": 0.40114,
+    "typed": 0.25849
+   },
+   "cost_whole_pump": {
+    "all": 0.28501,
+    "books": 0.21196,
+    "dense": 0.40557,
+    "typed": 0.26672
+   },
+   "pages_per_s": {
+    "books": 3.73335,
+    "dense": 1.90428,
+    "typed": 2.95514
+   },
+   "capped_share": {
+    "books": 0.00286,
+    "dense": 0.004,
+    "typed": 0.024
+   },
+   "capped_share_scored": {
+    "books": 0.0029,
+    "dense": 0.004,
+    "typed": 0.024
+   },
+   "capped_output_token_share": {
+    "books": 0.06215,
+    "dense": 0.03056,
+    "typed": 0.26941
+   },
+   "drain_s": {
+    "books": 83.17878,
+    "dense": 98.33766,
+    "typed": 118.76842
+   },
+   "mean_prompt_tokens": {
+    "books": 3683.65706,
+    "dense": 3992.68945,
+    "typed": 3997.36863
+   },
+   "mean_completion_tokens": {
+    "books": 481.43182,
+    "dense": 1424.72134,
+    "typed": 605.47742
+   },
+   "server_start_s": 237.1,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0044,
+    "tolerant_ci95": [
+     0.0037,
+     0.0063
+    ],
+    "plain": 0.0176,
+    "plain_ci95": [
+     0.0165,
+     0.0188
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 21,
+     "baseline_wins": 18,
+     "no_clear": 11,
+     "win_share_decisive": 0.538,
+     "ci95": [
+      0.386,
+      0.684
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 11,
+     "baseline_wins": 33,
+     "no_clear": 6,
+     "win_share_decisive": 0.25,
+     "ci95": [
+      0.146,
+      0.394
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 9,
+     "baseline_wins": 18,
+     "no_clear": 22,
+     "win_share_decisive": 0.333,
+     "ci95": [
+      0.186,
+      0.522
+     ]
+    }
+   }
+  },
+  {
+   "slug": "ovis-ocr2",
+   "name": "OvisOCR2",
+   "release": "2026-07-13",
+   "params_b": 0.85,
+   "max_tokens": 16384,
+   "setup_note": null,
+   "cost": {
+    "all": 0.24023,
+    "books": 0.10904,
+    "dense": 0.27535,
+    "typed": 0.38878
+   },
+   "cost_whole_pump": {
+    "all": 0.22284,
+    "books": 0.14491,
+    "dense": 0.27061,
+    "typed": 0.28417
+   },
+   "pages_per_s": {
+    "books": 7.00533,
+    "dense": 2.77421,
+    "typed": 1.96483
+   },
+   "capped_share": {
+    "books": 0.03143,
+    "dense": 0.064,
+    "typed": 0.1
+   },
+   "capped_share_scored": {
+    "books": 0.0314,
+    "dense": 0.064,
+    "typed": 0.1
+   },
+   "capped_output_token_share": {
+    "books": 0.55869,
+    "dense": 0.42791,
+    "typed": 0.70914
+   },
+   "drain_s": {
+    "books": 352.63652,
+    "dense": 223.3582,
+    "typed": 295.88965
+   },
+   "mean_prompt_tokens": {
+    "books": 2928.67583,
+    "dense": 3175.61221,
+    "typed": 3161.80365
+   },
+   "mean_completion_tokens": {
+    "books": 975.19434,
+    "dense": 2485.61866,
+    "typed": 2292.18265
+   },
+   "server_start_s": 263.5,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0072,
+    "tolerant_ci95": [
+     0.0064,
+     0.0087
+    ],
+    "plain": 0.0072,
+    "plain_ci95": [
+     0.0064,
+     0.0087
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 22,
+     "baseline_wins": 16,
+     "no_clear": 12,
+     "win_share_decisive": 0.579,
+     "ci95": [
+      0.422,
+      0.721
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 4,
+     "baseline_wins": 39,
+     "no_clear": 7,
+     "win_share_decisive": 0.093,
+     "ci95": [
+      0.037,
+      0.216
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 15,
+     "baseline_wins": 18,
+     "no_clear": 16,
+     "win_share_decisive": 0.455,
+     "ci95": [
+      0.298,
+      0.62
+     ]
+    }
+   }
+  },
+  {
+   "slug": "lighton-ocr3",
+   "name": "LightOnOCR-3-0.8B",
+   "release": "2026-10-07",
+   "params_b": 0.85,
+   "max_tokens": 4096,
+   "setup_note": null,
+   "cost": {
+    "all": 0.09455,
+    "books": 0.0648,
+    "dense": 0.12969,
+    "typed": 0.10104
+   },
+   "cost_whole_pump": {
+    "all": 0.09369,
+    "books": 0.06539,
+    "dense": 0.13012,
+    "typed": 0.09686
+   },
+   "pages_per_s": {
+    "books": 11.78759,
+    "dense": 5.88998,
+    "typed": 7.55998
+   },
+   "capped_share": {
+    "books": 0.00286,
+    "dense": 0.008,
+    "typed": 0.028
+   },
+   "capped_share_scored": {
+    "books": 0.0029,
+    "dense": 0.008,
+    "typed": 0.028
+   },
+   "capped_output_token_share": {
+    "books": 0.02485,
+    "dense": 0.02829,
+    "typed": 0.18248
+   },
+   "drain_s": {
+    "books": 21.17266,
+    "dense": 43.14358,
+    "typed": 55.42509
+   },
+   "mean_prompt_tokens": {
+    "books": 2814.91939,
+    "dense": 3064.77966,
+    "typed": 3048.79609
+   },
+   "mean_completion_tokens": {
+    "books": 454.20077,
+    "dense": 1418.54714,
+    "typed": 786.01064
+   },
+   "server_start_s": 279.3,
+   "cer_books": {
+    "pages": 282,
+    "tolerant": 0.0045,
+    "tolerant_ci95": [
+     0.0035,
+     0.0058
+    ],
+    "plain": 0.0045,
+    "plain_ci95": [
+     0.0035,
+     0.0058
+    ]
+   },
+   "judge": {
+    "books": {
+     "pages": 50,
+     "model_wins": 35,
+     "baseline_wins": 7,
+     "no_clear": 8,
+     "win_share_decisive": 0.833,
+     "ci95": [
+      0.694,
+      0.917
+     ]
+    },
+    "dense": {
+     "pages": 50,
+     "model_wins": 18,
+     "baseline_wins": 19,
+     "no_clear": 13,
+     "win_share_decisive": 0.486,
+     "ci95": [
+      0.334,
+      0.641
+     ]
+    },
+    "typed": {
+     "pages": 49,
+     "model_wins": 18,
+     "baseline_wins": 9,
+     "no_clear": 22,
+     "win_share_decisive": 0.667,
+     "ci95": [
+      0.478,
+      0.814
+     ]
+    }
+   }
+  }
+ ],
+ "variant": {
+  "name": "RolmOCR at 1,288 px",
+  "base": "rolmocr",
+  "release": "2025-04-02",
+  "longest_px": 1288,
+  "cost": {
+   "all": 0.27635,
+   "books": 0.26338,
+   "dense": 0.33024,
+   "typed": 0.24063
+  },
+  "pages_per_s": {
+   "books": 2.90031,
+   "dense": 2.31314,
+   "typed": 3.17456
+  },
+  "capped_share": {
+   "books": 0.08857,
+   "dense": 0.02,
+   "typed": 0.012
+  },
+  "cer_books": {
+   "tolerant": 0.0057,
+   "tolerant_ci95": [
+    0.0042,
+    0.0075
+   ],
+   "plain": 0.0206,
+   "plain_ci95": [
+    0.0187,
+    0.0223
+   ]
+  },
+  "judge_vs_2048": {
+   "books": {
+    "pages": 50,
+    "wins_small": 6,
+    "wins_2048": 24,
+    "no_clear": 19
+   },
+   "dense": {
+    "pages": 50,
+    "wins_small": 7,
+    "wins_2048": 36,
+    "no_clear": 7
+   },
+   "typed": {
+    "pages": 50,
+    "wins_small": 12,
+    "wins_2048": 11,
+    "no_clear": 26
+   }
+  },
+  "cer_pairs_vs_2048": {
+   "pages": 282,
+   "small_better": 24,
+   "small_worse": 50,
+   "equal": 208,
+   "margin": 0.005
+  }
+ },
+ "native": [
+  {
+   "slug": "dots-ocr",
+   "name": "dots.ocr",
+   "fit": {
+    "cost": {
+     "all": 0.38588,
+     "books": 0.32905,
+     "dense": 0.47224,
+     "typed": 0.37908
+    },
+    "cer_tolerant": 0.0046,
+    "cer_tolerant_ci95": [
+     0.0038,
+     0.0054
+    ]
+   },
+   "native": {
+    "cost": {
+     "all": 1.55094,
+     "books": 1.27369,
+     "dense": 2.00413,
+     "typed": 1.48589
+    },
+    "cer_tolerant": 0.0045,
+    "cer_tolerant_ci95": [
+     0.0034,
+     0.0058
+    ]
+   },
+   "cer_pairs": {
+    "pages": 282,
+    "native_better": 25,
+    "native_worse": 18,
+    "equal": 239
+   }
+  },
+  {
+   "slug": "ovis-ocr2",
+   "name": "OvisOCR2",
+   "fit": {
+    "cost": {
+     "all": 0.15871,
+     "books": 0.08062,
+     "dense": 0.16435,
+     "typed": 0.26241
+    },
+    "cer_tolerant": 0.0072,
+    "cer_tolerant_ci95": [
+     0.0064,
+     0.0087
+    ]
+   },
+   "native": {
+    "cost": {
+     "all": 0.41745,
+     "books": 0.17762,
+     "dense": 0.54837,
+     "typed": 0.62229
+    },
+    "cer_tolerant": 0.0081,
+    "cer_tolerant_ci95": [
+     0.0071,
+     0.0093
+    ]
+   },
+   "cer_pairs": {
+    "pages": 282,
+    "native_better": 19,
+    "native_worse": 18,
+    "equal": 245
+   }
+  },
+  {
+   "slug": "glm-ocr",
+   "name": "GLM-OCR",
+   "fit": {
+    "cost": {
+     "all": 0.27217,
+     "books": 0.20803,
+     "dense": 0.41448,
+     "typed": 0.21966
+    },
+    "cer_tolerant": 0.0044,
+    "cer_tolerant_ci95": [
+     0.0038,
+     0.0064
+    ]
+   },
+   "native": {
+    "cost": {
+     "all": 0.40849,
+     "books": 0.35176,
+     "dense": 0.55065,
+     "typed": 0.34576
+    },
+    "cer_tolerant": 0.0051,
+    "cer_tolerant_ci95": [
+     0.0041,
+     0.0063
+    ]
+   },
+   "cer_pairs": {
+    "pages": 282,
+    "native_better": 18,
+    "native_worse": 26,
+    "equal": 238
+   }
+  }
+ ],
+ "engine": {
+  "gpu": "A100 80 GB",
+  "price_per_hour": 2.5,
+  "pages_per_slice": 100,
+  "models": [
+   {
+    "slug": "rolmocr",
+    "name": "RolmOCR",
+    "old_vllm": "0.8.2",
+    "new_vllm": "0.30.0",
+    "old_extra": null,
+    "slices": {
+     "books": {
+      "old_pps": 1.2526,
+      "new_pps": 1.6438,
+      "speedup": 1.312
+     },
+     "dense": {
+      "old_pps": 0.9208,
+      "new_pps": 1.1866,
+      "speedup": 1.289
+     },
+     "typed": {
+      "old_pps": 1.2272,
+      "new_pps": 1.4485,
+      "speedup": 1.18
+     }
+    }
+   },
+   {
+    "slug": "olmocr2",
+    "name": "olmOCR-2",
+    "old_vllm": "0.11.0",
+    "new_vllm": "0.29.0",
+    "old_extra": null,
+    "slices": {
+     "books": {
+      "old_pps": 2.3905,
+      "new_pps": 3.382,
+      "speedup": 1.415
+     },
+     "dense": {
+      "old_pps": 1.3701,
+      "new_pps": 2.0277,
+      "speedup": 1.48
+     },
+     "typed": {
+      "old_pps": 1.7717,
+      "new_pps": 2.6673,
+      "speedup": 1.506
+     }
+    }
+   },
+   {
+    "slug": "glm-ocr",
+    "name": "GLM-OCR",
+    "old_vllm": "0.16.0",
+    "new_vllm": "0.30.0",
+    "old_extra": "with transformers 5.1",
+    "slices": {
+     "books": {
+      "old_pps": 2.7056,
+      "new_pps": 2.6364,
+      "speedup": 0.974
+     },
+     "dense": {
+      "old_pps": 1.3294,
+      "new_pps": 1.6504,
+      "speedup": 1.241
+     },
+     "typed": {
+      "old_pps": 2.4366,
+      "new_pps": 2.4075,
+      "speedup": 0.988
+     }
+    }
+   }
+  ]
+ },
+ "small": {
+  "cards": [
+   {
+    "key": "t4-small",
+    "label": "T4, 16 GB",
+    "price_per_hour": 0.4,
+    "memory_gib": 15.0
+   },
+   {
+    "key": "a10g-small",
+    "label": "A10G, 24 GB",
+    "price_per_hour": 1.0,
+    "memory_gib": 22.5
+   }
+  ],
+  "big_card": {
+   "key": "rtx-pro-6000",
+   "label": "RTX PRO 6000, 96 GB",
+   "price_per_hour": 2.75
+  },
+  "runs": [
+   {
+    "slug": "lighton-ocr3",
+    "name": "LightOnOCR-3-0.8B",
+    "card": "a10g-small",
+    "finished": true,
+    "weights_gib": 1.72,
+    "kv_cache_tokens": 1308162,
+    "cost": {
+     "books": 0.1319,
+     "dense": 0.2348,
+     "typed": 0.1815
+    },
+    "cost_trimmed": {
+     "books": 0.1159,
+     "dense": 0.231,
+     "typed": 0.1691
+    }
+   },
+   {
+    "slug": "olmocr2",
+    "name": "olmOCR-2",
+    "card": "a10g-small",
+    "finished": true,
+    "weights_gib": 9.56,
+    "kv_cache_tokens": 140576,
+    "cost": {
+     "books": 0.295,
+     "dense": 0.698,
+     "typed": 0.5248
+    },
+    "cost_trimmed": {
+     "books": 0.2726,
+     "dense": 0.4828,
+     "typed": 0.3763
+    }
+   },
+   {
+    "slug": "rolmocr",
+    "name": "RolmOCR",
+    "card": "a10g-small",
+    "finished": false,
+    "weights_gib": 15.67,
+    "kv_cache_tokens": 28880,
+    "cost": {
+     "books": 2.1204,
+     "dense": 2.8325
+    },
+    "cost_trimmed": {
+     "books": 1.9643,
+     "dense": 2.7898
+    }
+   },
+   {
+    "slug": "lighton-ocr3",
+    "name": "LightOnOCR-3-0.8B",
+    "card": "t4-small",
+    "finished": true,
+    "weights_gib": 1.72,
+    "kv_cache_tokens": 727297,
+    "cost": {
+     "books": 0.246,
+     "dense": 0.4138,
+     "typed": 0.3506
+    },
+    "cost_trimmed": {
+     "books": 0.1979,
+     "dense": 0.3635,
+     "typed": 0.3085
+    }
+   }
+  ],
+  "not_measured": "not measured: Job timeout at 60 min (202 s scheduling + 942 s weight download + two slow slices)",
+  "typical_page_tokens": 4500,
+  "client_in_flight": "5 to 10"
+ },
+ "chain": {
+  "model": "GLM-OCR",
+  "pages": 250,
+  "steps": [
+   {
+    "key": "feb",
+    "label": "The February 2026 way",
+    "detail": "fixed batches of 64 on an L4 GPU, full-size images, vLLM 0.16",
+    "cost": 1.57,
+    "model": "GLM-OCR"
+   },
+   {
+    "key": "today",
+    "label": "Today's way",
+    "detail": "a server with many pages in flight, pages fitted to 2,048 px, vLLM 0.30, a larger GPU",
+    "cost": 0.4011,
+    "model": "GLM-OCR"
+   },
+   {
+    "key": "newest",
+    "label": "The newest model",
+    "detail": "LightOnOCR-3, same setup and GPU",
+    "cost": 0.1297,
+    "model": "LightOnOCR-3-0.8B"
+   }
+  ],
+  "breakdown_approx": {
+   "sending": {
+    "factor": 2.5,
+    "parts": {
+     "image": [
+      1.3,
+      1.4
+     ],
+     "engine": [
+      1.2,
+      1.35
+     ]
+    }
+   },
+   "gpu": {
+    "factor": 1.5
+   }
+  }
+ }
+}
