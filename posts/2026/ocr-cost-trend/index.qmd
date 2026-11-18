@@ -14,9 +14,6 @@ execute:
   echo: false
 ---
 
-<!-- Draft v4, 2026-11-18: restructured (story up front, details in appendix). Built from draft v2 (~/Documents/code/ocr-cost-trend/draft/post-draft-v2.md) with the chosen figures (A, B, C, chain, F, H, J, K). Local only: not pushed, not published. -->
-<!-- Other title option: "What it costs to OCR 1,000 pages with an open model, April 2025 to now" -->
-
 ```{=html}
 <style>
 .ocf { margin: 0.5rem 0 1.5rem; }
@@ -82,7 +79,7 @@ F.figC({ q: cQ }, width)
 
 I took one model, GLM-OCR from January 2026, and one kind of page, the 1771 Britannica. Run the way I ran it in February, it cost $1.57 per 1,000 pages. Then I changed how it runs: a vLLM server that [saturate](https://github.com/davanstrien/saturate) keeps fed with many pages at once, a larger GPU (an RTX PRO 6000 instead of an L4), page images fitted to 2,048 pixels, and a newer vLLM. That brought the same model to $0.40. Swapping in the newest model, LightOnOCR-3-0.8B, which is smaller and faster, brought it to $0.13.[^chain]
 
-I got less stupid. <!-- DANIEL: check wording -->In February my script sent pages in fixed batches of 64 and did its own processing between them, so the GPU sat idle about a quarter of the time. Now the server always has pages waiting.<!-- /DANIEL -->
+I got less stupid. In February my script sent pages in fixed batches of 64 and did its own processing between them, so the GPU sat idle about a quarter of the time. Now the server always has pages waiting.
 
 ```{ojs}
 F.figChain(width)
@@ -96,7 +93,6 @@ This is the last step in practice: the newest model reading typed pages, several
 <figcaption>LightOnOCR-3-0.8B reading typed archive pages through vLLM on one RTX PRO 6000 on Hugging Face Jobs. The clip comes from a separate run of 14,483 pages from the same archive, not the benchmark.</figcaption>
 </figure>
 ```
-<!-- CHECK: name the archive (UCSF Industry Documents Library) in the caption and in the method appendix? If so, add the advisory-committee disclosure. -->
 
 The on-screen rate in the clip is a live reading.[^video]
 
@@ -115,7 +111,7 @@ Split the pages over several GPUs and the time falls while the cost stays about 
 
 My advice from February stands, and it is now cheap to follow: run a few models on a sample of your own pages and look. The first full comparison of all eight models on all 850 pages cost about $6.
 
-Code and results: [link to come]
+Each model ran with the settings from its [uv-scripts OCR recipe](https://github.com/davanstrien/uv-scripts/tree/main/ocr), driven by [saturate](https://github.com/davanstrien/saturate).
 
 [^small-image]: If the April 2025 model gets smaller page images (1,288 pixels instead of 2,048), it costs about half as much, and the gap to the newest model is about three times instead of five. But it then reads less well. See "Image size" in the appendix.
 [^noise]: Each model was measured twice, in two slightly different ways. For the all-pages cost, differences under about a quarter are not meaningful. For a single kind of page, the bar is nearer a half.
@@ -167,7 +163,7 @@ F.figB({ order: bOrder }, width)
 
 None of this lines up neatly with how new a model is.
 
-- 63 of the 350 book pages in my set are blank. Three models return nothing for a blank page, which is right. GLM-OCR writes a sentence about the image instead, on all 63, usually that it is too blurry to read. OvisOCR2 answered 24 blank pages with "The quick brown fox". RolmOCR writes made-up tables on most blank pages, and on almost half of them repeats an empty table until it hits its output limit. <!-- CHECK: GLM-OCR ran without its layout step. Would its own pipeline drop blank pages before the model sees them? If so, the "too blurry" example is partly our setup, and Daniel's naming rule says not to name it. -->
+- 63 of the 350 book pages in my set are blank. Three models return nothing for a blank page, which is right. GLM-OCR, which I ran without its layout step, writes a sentence about the image instead, on all 63, usually that it is too blurry to read. OvisOCR2 answered 24 blank pages with "The quick brown fox". RolmOCR writes made-up tables on most blank pages, and on almost half of them repeats an empty table until it hits its output limit.
 - On a tax form full of dot leaders, four of the eight models looped in each run, and not the same four both times. The newest model was one of them. No model finished the page cleanly in both runs. Most readings that did finish had mistakes, such as ticking a box that is empty on the form or leaving out lines.
 - On a typed page with a black blotch over the last few lines, three models each made up a different final entry, in both runs. Nothing in their output shows that they guessed.
 
