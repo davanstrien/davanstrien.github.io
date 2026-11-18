@@ -7,6 +7,10 @@ description: "A guide to re-processing digitised collections with open-source VL
 draft: false
 ---
 
+::: {.callout-note title="Update (November 2026)"}
+I measured this again with eight open OCR models from the last 18 months on the same pages and GPU. The newest reads 1,000 pages for under $0.10, about five times cheaper than an April 2025 model: [OCR with open models got about 5× cheaper in 18 months](../ocr-cost-trend/index.qmd).
+:::
+
 ::: {.callout-note title="Update (July 2026)"}
 Five months on, this number is holding up — and it was the conservative case. I recently
 reproduced it with a different model on different hardware: [Surya OCR 2](https://huggingface.co/datalab-to/surya-ocr-2)

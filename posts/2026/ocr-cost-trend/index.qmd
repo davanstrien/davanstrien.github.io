@@ -58,10 +58,10 @@ viewof aShow = Inputs.checkbox(["April 2025 model at 1,288 px", "Trend"], { labe
 F.figA({ pt: aPt, showVar: aShow.includes("April 2025 model at 1,288 px"), showTrend: aShow.includes("Trend") }, width)
 ```
 
-- **Cost:** reading 1,000 pages fell from $0.51 with the April 2025 model to $0.095 with the newest, LightOnOCR-3-0.8B. That is about five times cheaper in 18 months at the same image size.[^small-image] Five models from October 2025 to July 2026 cost $0.23 to $0.28 and are too close to rank.[^noise] The fitted trend halves the cost about every ten months, but I would not bet on it.[^toy]
+- **Cost:** reading 1,000 pages fell from $0.51 with the April 2025 model to $0.095 with the newest, [LightOnOCR-3-0.8B](https://huggingface.co/lightonai/LightOnOCR-3-0.8B). That is about five times cheaper in 18 months at the same image size.[^small-image] Five models from October 2025 to July 2026 cost $0.23 to $0.28 and are too close to rank.[^noise] The fitted trend halves the cost about every ten months, but I would not bet on it.[^toy]
 - **Quality:** on ordinary pages the cheaper models did not get worse. On book pages every model gets more than 99% of characters right on a typical page (not counting running headers), and a vision-model judge preferred the newest model to the April 2025 one on book and typed pages. On dense 18th-century print the April 2025 model still beat every later model except the newest, which about ties with it.
 - **Where the saving came from:** for one model on one kind of page, running it better cut the cost about four times: a vLLM server kept busy with many pages at once, instead of a script sending fixed batches, plus a bigger GPU and newer serving software. Swapping in a smaller, faster model cut it about three times more.
-- **What to use:** for book pages and typed documents, start with LightOnOCR-3-0.8B. It is the cheapest on all three kinds of page, and there it read as well as or better than the April 2025 model. For dense historical print, no model is clearly best: try it and the April 2025 model (RolmOCR) on a sample of your own pages first.
+- **What to use:** for book pages and typed documents, start with LightOnOCR-3-0.8B. It is the cheapest on all three kinds of page, and there it read as well as or better than the April 2025 model. For dense historical print, no model is clearly best: try it and the April 2025 model ([RolmOCR](https://huggingface.co/reducto/RolmOCR)) on a sample of your own pages first.
 - **What a collection costs:** with the newest model, a million pages is roughly $65 to $130 of GPU time, depending on the kind of page, and about a day and a half on one rented GPU for a mixed set.
 
 The sections below show the evidence. The details are in the appendix.
@@ -77,7 +77,7 @@ F.figC({ q: cQ }, width)
 
 ## Where the saving comes from
 
-I took one model, GLM-OCR from January 2026, and one kind of page, the 1771 Britannica. Run the way I ran it in February, it cost $1.57 per 1,000 pages. Then I changed how it runs: a vLLM server that [saturate](https://github.com/davanstrien/saturate) keeps fed with many pages at once, a larger GPU (an RTX PRO 6000 instead of an L4), page images fitted to 2,048 pixels, and a newer vLLM. That brought the same model to $0.40. Swapping in the newest model, LightOnOCR-3-0.8B, which is smaller and faster, brought it to $0.13.[^chain]
+I took one model, [GLM-OCR](https://huggingface.co/zai-org/GLM-OCR) from January 2026, and one kind of page, the 1771 Britannica. Run the way I ran it in February, it cost $1.57 per 1,000 pages. Then I changed how it runs: a vLLM server that [saturate](https://github.com/davanstrien/saturate) keeps fed with many pages at once, a larger GPU (an RTX PRO 6000 instead of an L4), page images fitted to 2,048 pixels, and a newer vLLM. That brought the same model to $0.40. Swapping in the newest model, LightOnOCR-3-0.8B, which is smaller and faster, brought it to $0.13.[^chain]
 
 I got less stupid. In February my script sent pages in fixed batches of 64 and did its own processing between them, so the GPU sat idle about a quarter of the time. Now the server always has pages waiting.
 
@@ -126,6 +126,7 @@ Each model ran with the settings from its [uv-scripts OCR recipe](https://github
 ::: {.callout-note collapse="true" appearance="simple"}
 ## How I ran it
 
+- **Models:** [RolmOCR](https://huggingface.co/reducto/RolmOCR) (April 2025), [dots.ocr](https://huggingface.co/dots-studio/dots.ocr) (July 2025), [olmOCR-2](https://huggingface.co/allenai/olmOCR-2-7B-1025-FP8) (FP8, October 2025), [PaddleOCR-VL](https://huggingface.co/PaddlePaddle/PaddleOCR-VL) (October 2025), [DeepSeek-OCR](https://huggingface.co/deepseek-ai/DeepSeek-OCR) (October 2025), [GLM-OCR](https://huggingface.co/zai-org/GLM-OCR) (January 2026), [OvisOCR2](https://huggingface.co/ATH-MaaS/OvisOCR2) (July 2026) and [LightOnOCR-3-0.8B](https://huggingface.co/lightonai/LightOnOCR-3-0.8B) (October 2026).
 - **Pages:** 350 pages from historical natural history books, 250 pages of the 1771 Encyclopaedia Britannica, and 250 pages from 44 typed and printed documents from an archive, mostly from the late 20th century and some from the 2000s. 282 of the book pages have human-checked transcriptions, so I can measure accuracy on those. 63 of the book pages are blank.
 - **Hardware:** one Nvidia RTX PRO 6000 on [Hugging Face Jobs](https://huggingface.co/docs/hub/jobs-overview), at $2.75 an hour.
 - **Setup:** every model ran behind a vLLM server, with the same client ([saturate](https://github.com/davanstrien/saturate)) sending it many pages at once. Prompts and sampling follow each model's own documentation where I could manage it. Every page was first fitted to 2,048 pixels on its longest side. Some models then shrink it further by their own rule.
@@ -163,11 +164,11 @@ F.figB({ order: bOrder }, width)
 
 None of this lines up neatly with how new a model is.
 
-- 63 of the 350 book pages in my set are blank. Three models return nothing for a blank page, which is right. GLM-OCR, which I ran without its layout step, writes a sentence about the image instead, on all 63, usually that it is too blurry to read. OvisOCR2 answered 24 blank pages with "The quick brown fox". RolmOCR writes made-up tables on most blank pages, and on almost half of them repeats an empty table until it hits its output limit.
+- 63 of the 350 book pages in my set are blank. Three models return nothing for a blank page, which is right. GLM-OCR, which I ran without its layout step, writes a sentence about the image instead, on all 63, usually that it is too blurry to read. [OvisOCR2](https://huggingface.co/ATH-MaaS/OvisOCR2) answered 24 blank pages with "The quick brown fox". RolmOCR writes made-up tables on most blank pages, and on almost half of them repeats an empty table until it hits its output limit.
 - On a tax form full of dot leaders, four of the eight models looped in each run, and not the same four both times. The newest model was one of them. No model finished the page cleanly in both runs. Most readings that did finish had mistakes, such as ticking a box that is empty on the form or leaving out lines.
 - On a typed page with a black blotch over the last few lines, three models each made up a different final entry, in both runs. Nothing in their output shows that they guessed.
 
-The share of pages where a model hit its output limit ranged from under 1% to 26% by model and kind of page, and the highest rates belong to models I ran outside their usual pipeline (for DeepSeek-OCR, its default prompt cut the book-page rate from 13% to under 1%, at some cost in accuracy).
+The share of pages where a model hit its output limit ranged from under 1% to 26% by model and kind of page, and the highest rates belong to models I ran outside their usual pipeline (for [DeepSeek-OCR](https://huggingface.co/deepseek-ai/DeepSeek-OCR), its default prompt cut the book-page rate from 13% to under 1%, at some cost in accuracy).
 :::
 
 ::: {.callout-note collapse="true" appearance="simple"}
