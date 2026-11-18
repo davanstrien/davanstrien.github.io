@@ -1,0 +1,199 @@
+---
+title: "OCR with open models got about 5× cheaper in 18 months. Here is where that came from."
+date: "2026-11-18"
+author: "Daniel van Strien"
+categories: [ocr, glam, huggingface, benchmarks]
+description: "I ran eight open OCR models from the last 18 months on the same 850 pages and the same GPU. The newest costs about a fifth of the oldest, and the model is only part of the reason."
+draft: true
+resources:
+  - data.json
+  - figures.js
+  - lighton-ocr3-typed-pages.mp4
+  - lighton-ocr3-typed-pages-poster.jpg
+execute:
+  echo: false
+---
+
+<!-- Draft v3, 2026-11-18. Built from draft v2 (~/Documents/code/ocr-cost-trend/draft/post-draft-v2.md) with the chosen figures (A, B, C, chain, F, H, J, K). Local only: not pushed, not published. -->
+<!-- Other title option: "What it costs to OCR 1,000 pages with an open model, April 2025 to now" -->
+
+```{=html}
+<style>
+.ocf { margin: 0.5rem 0 1.5rem; }
+.ocf-title { font-weight: 600; font-size: 1rem; line-height: 1.35; margin: 0.25rem 0 0.4rem; }
+.ocf-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.85rem; color: #44484d; margin: 4px 0 2px; }
+.ocf-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.ocf-legend svg { flex: none; }
+.ocf-chart svg { display: block; overflow: visible; max-width: 100%; }
+.ocf-panels { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.ocf-panels > div { flex: 1 1 300px; min-width: 0; }
+.ocf-panel-title { font-size: 0.88rem; color: #44484d; font-weight: 600; margin: 10px 0 0; }
+.ocf-notes { margin: 6px 0 0; font-size: 0.82rem; color: #63686e; line-height: 1.45; }
+.ocf-calc-out { display: flex; flex-wrap: wrap; gap: 8px 40px; margin: 10px 0 4px; }
+.ocf-calc-num { font-size: 1.8rem; font-weight: 600; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.ocf-calc-lab { font-size: 0.85rem; color: #63686e; }
+.ocf-video { margin: 1rem 0 1.5rem; text-align: center; }
+.ocf-video video { width: 100%; max-width: 420px; height: auto; border-radius: 4px; }
+.ocf-video figcaption { font-size: 0.85rem; color: #63686e; margin-top: 0.4rem; text-align: left; }
+</style>
+```
+
+```{ojs}
+//| output: false
+Plot = import("https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.16/+esm")
+d3 = import("https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm")
+data = FileAttachment("data.json").json()
+import { makeFigures } from "./figures.js"
+F = makeFigures(data, Plot, d3)
+```
+
+## The short version
+
+In February I wrote that you could [re-OCR a digitised collection for about $0.002 a page](../re-ocr-collections/index.qmd). That number is already out of date, so I measured it properly.
+
+I took eight open OCR models released between April 2025 and October 2026 and ran each one on the same 850 pages, on the same GPU, served the same way. Reading 1,000 pages cost about $0.50 with the April 2025 model. With the newest one it costs under $0.10.
+
+Each dot below is one model, placed at the date it came out. Hover a dot for the exact cost, and use the menu to see one kind of page at a time.
+
+```{ojs}
+viewof aPt = Inputs.select(F.PT_OPTIONS, { label: "Page type" })
+viewof aShow = Inputs.checkbox(["April 2025 model at 1,288 px", "Trend"], { label: "Show" })
+F.figA({ pt: aPt, showVar: aShow.includes("April 2025 model at 1,288 px"), showTrend: aShow.includes("Trend") }, width)
+```
+
+That is about five times cheaper in 18 months, with both models given page images of the same size. If the older model gets smaller images, the gap is about three times, and the older model then reads less well. More on that below. With the newest model, a million pages costs roughly $65 to $130 of GPU time, depending on the kind of page.
+
+## What I ran
+
+- **Pages:** 350 pages from historical natural history books, 250 pages of the 1771 Encyclopaedia Britannica, and 250 pages from 44 typed and printed documents from an archive, mostly from the late 20th century and some from the 2000s. 282 of the book pages have human-checked transcriptions, so I can measure accuracy on those. 63 of the book pages are blank.
+- **Hardware:** one Nvidia RTX PRO 6000 on [Hugging Face Jobs](https://huggingface.co/docs/hub/jobs-overview), at $2.75 an hour.
+- **Setup:** every model ran behind a vLLM server, with the same client ([saturate](https://github.com/davanstrien/saturate)) sending it many pages at once. Prompts and sampling follow each model's own documentation where I could manage it. Every page was first fitted to 2,048 pixels on its longest side. Some models then shrink it further by their own rule.
+
+Three models ran outside their usual pipeline. Two are designed to run after a layout-detection step, which I left out. One ran with its plain-text prompt in place of its default.
+
+The shape of the result is two steps with a plateau between them. The two earliest models, from April and July 2025, cost $0.45 to $0.51 per 1,000 pages. Five models released between October 2025 and July 2026 sit between $0.23 and $0.28, too close together to rank. Then one model from October 2026 comes in at $0.095.
+
+## Did the cheaper models get worse?
+
+On ordinary pages, hardly.
+
+On the 282 book pages with transcriptions, every model gets more than 99% of the characters right on a typical page, once you stop counting whether it copies the running header and page number. The median error rates run from 0.44% to 0.82%. Two of the cheaper models make about one and a half times as many errors as the April 2025 model. The newest makes no more than it. I measured the eight models twice and these figures did not move.
+
+I also asked a vision model to compare outputs side by side on 50 pages of each kind. To check that judge, I read eight pairs blind myself, and had four other AI models rate 40 pairs, each checking several differences per page against the scan. Where two of them both picked a side, it was nearly always the same side. The judge itself was less steady. It changed its verdict with the order of display on between one page in ten and one in five, depending on the kind of page, and it agreed least with the other raters on typed pages.
+
+The figure below puts cost against quality. Switch the measure to see the error rate with headers counted, or the judge's verdicts on each kind of page.
+
+```{ojs}
+viewof cQ = Inputs.select(F.C_OPTIONS, { label: "Quality measure" })
+F.figC({ q: cQ }, width)
+```
+
+With that caveat, the newest model was clearly preferred to the April 2025 one on book pages: 35 pages against 7. On typed pages it was preferred less clearly: 18 pages against 9, with 22 too close to call.
+
+The hard pages are a different story. On the dense two-column print of the 1771 Britannica, the April 2025 model was preferred over every later model except the newest. Several of them read the long s as an f, but that is not the whole story: the blind raters still preferred the April 2025 model on half or more of 20 pairs when they ignored long-s mistakes. The newest model about ties with it: 18 pages against 19.
+
+## There is still no best model
+
+The kind of page moves the cost as much as the choice between neighbouring models, and the dearest kind of page is not the same for every model.
+
+```{ojs}
+viewof bOrder = Inputs.select(new Map([["by release date", "release"], ["by cost, all pages", "cost"]]), { label: "Order" })
+F.figB({ order: bOrder }, width)
+```
+
+Each model also failed in its own way:
+
+- 63 of the 350 book pages in my set are blank. Three models return nothing for a blank page, which is right. GLM-OCR writes a sentence about the image instead, on all 63, usually that it is too blurry to read. OvisOCR2 answered 24 blank pages with "The quick brown fox". RolmOCR writes made-up tables on most blank pages, and on almost half of them repeats an empty table until it hits its output limit. <!-- CHECK: GLM-OCR ran without its layout step. Would its own pipeline drop blank pages before the model sees them? If so, the "too blurry" example is partly our setup, and Daniel's naming rule says not to name it. -->
+- On a tax form full of dot leaders, four of the eight models looped in each run, and not the same four both times. The newest model was one of them. No model finished the page cleanly in both runs. Most readings that did finish had mistakes, such as ticking a box that is empty on the form or leaving out lines.
+- On a typed page with a black blotch over the last few lines, three models each made up a different final entry, in both runs. Nothing in their output shows that they guessed.
+
+The share of pages where a model hit its output limit ranged from under 1% to 26% by model and kind of page, and the highest rates belong to models I ran outside their usual pipeline (for DeepSeek-OCR, its default prompt cut the book-page rate from 13% to under 1%, at some cost in accuracy).
+
+None of this lines up neatly with how new a model is. So my advice from February stands, and it is now cheap to follow: run a few models on a sample of your own pages and look. The first full comparison of all eight models on all 850 pages cost about $6.
+
+## Where the saving comes from
+
+The model is only part of it. I took one model, GLM-OCR from January 2026, and one kind of page, the 1771 Britannica, and measured three steps.
+
+```{ojs}
+F.figChain(width)
+```
+
+- **Run the way I ran it in February, on a small GPU:** $1.57 per 1,000 pages.
+- **Run the way I run things now, on a larger GPU:** $0.40. About four times cheaper, with the same model.
+- **Swap in the newest model:** $0.13. About three times cheaper again.
+
+The first step bundles several changes. My February recipe sent fixed batches of 64 pages and left the GPU waiting at least a quarter of the time. Now a server always has pages queued. The old recipe also sent full-size scans where I now fit pages to 2,048 pixels, and vLLM itself moved on. From partial tests, I would put the way pages are sent, the image size and the engine together at about 2.5 times, and the bigger GPU at about 1.5 times. I could not separate them cleanly.
+
+This is what the last step looks like in practice: the newest model reading typed pages, several a second.
+
+```{=html}
+<figure class="ocf-video">
+<video src="lighton-ocr3-typed-pages.mp4" poster="lighton-ocr3-typed-pages-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="LightOnOCR-3-0.8B reading typed pages, first one page with its text, then a grid of pages"></video>
+<figcaption>LightOnOCR-3-0.8B reading typed archive pages through vLLM on one RTX PRO 6000 on Hugging Face Jobs. The clip comes from a separate run of 14,483 pages from the same archive, not the benchmark. The on-screen rate is a live reading that peaks above the average; that run averaged 7.7 pages a second, against 7.6 for typed pages in the benchmark.</figcaption>
+</figure>
+```
+<!-- CHECK: name the archive (UCSF Industry Documents Library) in the caption and in "What I ran"? If so, add the advisory-committee disclosure. -->
+
+I also ran three models on the vLLM release that was current when each came out. Today's version was 1.2 to 1.5 times faster for the two 2025 models, and between level and 1.2 times faster for the 2026 one.
+
+## Two practical findings
+
+**Image size can matter as much as the model.** Sending pages at full scan size instead of 2,048 pixels cost between 1.3 and 4.2 times more, depending on the model and the kind of page, and did not improve accuracy on the book pages. Going the other way, 1,288-pixel images nearly halved the cost of the April 2025 model. But the judge then preferred the larger-image reading on most dense-print pages (36 against 7) and on many book pages (24 against 6). This is why the headline comes with a condition: against the April 2025 model at 1,288 pixels, the newest model is about three times cheaper, not five.
+
+The left panel shows what each image size costs, and the right panel what it does to the error rate on book pages.
+
+```{ojs}
+viewof fPt = Inputs.select(F.PT_OPTIONS, { label: "Page type for cost" })
+F.figF({ pt: fPt }, width)
+```
+
+**Small models fit on small GPUs.** The newest model ran on a 16 GB T4, at $0.40 an hour, for roughly $0.25 to $0.41 per 1,000 pages. On a 24 GB GPU the April 2025 model loads, but its weights leave room for only a handful of pages at a time, and it cost about $2.10 to $2.80 per 1,000 pages (two kinds of page; the third timed out). A sister model of the same size, with 8-bit weights and smaller images, ran comfortably on the same card. The lowest cost per page is still on the big GPU. The point is that you no longer need one. These small-GPU figures come from short single runs.
+
+The bars show how much of each card the model weights take, and the dots what a page cost on that card.
+
+```{ojs}
+F.figH(width)
+```
+
+## Where this could go
+
+If you draw a line through these eight points, the cost halves about every ten months. Tick "Trend" above the first figure to see it. Carry that line on and a million pages costs under $50 by the end of 2027. I would not bet on a straight line. It rests on eight models, one of which does most of the work, and with the April 2025 model at 1,288 pixels as the starting point the halving time stretches to about 13 months. Treat it as a toy.
+
+## What would your collection cost?
+
+Type in the number of pages in your collection and pick the kind of page closest to yours. The calculator uses the measured rates on one RTX PRO 6000 and shows every model as a tick, so you can see how much the choice of model moves the bill.
+
+```{ojs}
+viewof jN = Inputs.range([1000, 100000000], { value: 1000000, step: 1000, transform: Math.log, label: "Pages" })
+viewof jPt = Inputs.select(F.PT_OPTIONS, { label: "Page type" })
+viewof jModel = Inputs.select(F.modelOptions, { label: "Model", value: F.newestSlug })
+F.figJ({ n: jN, pt: jPt, slug: jModel }, width)
+```
+
+For a million mixed pages, the newest model comes to about $95 and roughly a day and a half on one GPU. Split the pages over several GPUs and the time falls while the cost stays about the same. Start-up time is not included, and your pages will not behave exactly like mine, so treat the result as a rough estimate. Measurement noise alone is about a quarter either way, and pages unlike mine can differ by more.
+
+## What this does not tell you
+
+- These are 850 pages from three sources. Your collection is different.
+- "About five times" compares one pair of models at one image size.
+- Each model was measured twice, in two slightly different ways. For the all-pages cost, differences under about a quarter are not meaningful. For a single kind of page, the bar is nearer a half. The side tests ran once.
+- The 2,048-pixel rule is the newest model's own rule, and my test harness grew out of the recipe for that model. Other models might do better with settings tuned for them.
+- Three models ran outside their usual pipeline, and output limits differ by model, from 4,096 to 16,384 tokens.
+- The accuracy figures come from 282 book pages. For the other pages I rely on a vision-model judge, which has known biases.
+- Newer models here are also smaller, so I cannot separate "newer" from "smaller".
+- I only tested models I could get running today, with recent vLLM versions (0.22 to 0.30).
+- Prices are today's Hugging Face Jobs prices and leave out the few minutes each job takes to start.
+- For release dates I used the date each model's repository was created on the Hub. <!-- CHECK: re-read createdAt via the Hub API for the five models the claims check could not confirm. -->
+
+Code and results: [link to come]
+
+## Appendix: all the numbers
+
+Every model with every main measure. Click a column heading to sort.
+
+```{ojs}
+K = F.tableK()
+Inputs.table(K.rows, { format: K.format, layout: "auto", rows: 10 })
+html`<p class="ocf-notes">${K.notes}</p>`
+```
